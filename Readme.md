@@ -48,6 +48,16 @@ Each component may have elements. They should have classes that are only **one w
 }
 ```
 
+For those that need two or more words, concatenate them without dashes or underscores.
+
+```scss
+.profile-box {
+  .firstname { /* ... */ }
+  .lastname { /* ... */ }
+  .avatar { /* ... */ }
+}
+```
+
 If you're going to use elements that don't have class names, make sure that you use the `>` descendant selectors so as to avoid clashes with sub-components.
 
 ```scss
@@ -55,6 +65,8 @@ If you're going to use elements that don't have class names, make sure that you 
   > h3 { /* ... */ }
 }
 ```
+
+But in general, avoid tag selectors whenever possible.
 
 ### Variants
 
@@ -83,6 +95,7 @@ Why a dash? Because:
 
 * it prevents ambiguity with elements
 * a CSS class can only start with a letter, `_` or `-`
+* dashes are easier to type than underscores
 * it kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`)
 
 ### Nested components
@@ -262,6 +275,21 @@ But...
 ### But dashes suck
 
 Well then don't use it, but keep the rest of the ideas in place (components, elements, variants).
+
+### But I can't think of 2 words
+
+Some components will only need one word to express their purpose, such as `alert`. In these cases, consider that using some suffixes will make it clearer that it's a block-level element:
+
+* `.alert-box`
+* `.alert-card`
+* `.alert-block`
+
+Or for inlines:
+
+* `.link-button`
+* `.link-span`
+
+<br>
 
 Other solutions
 ---------------
