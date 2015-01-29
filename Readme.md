@@ -1,7 +1,9 @@
 RSCSS
 =====
 
-Reasonable standard for CSS stylesheet structure.
+Reasonable Standard* for CSS Stylesheet Structures.
+
+(`*`: "S" can also stand for "suggestions")
 
 :construction: This document is a work in progress.
 
@@ -154,7 +156,9 @@ Components should be made in a way that they're reusable in different contexts. 
 * Positioning (`position`, `top`, `left`, `right`, `bottom`)
 * Floats (`float`, `clear`)
 * Margins (`margin`)
-* Dimensions (`width`, `height`... but `max-width` is fine)
+* Dimensions (`width`, `height`) *
+
+Exception here would be elements with a fixed width, such as avatars and logos.
 
 If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
