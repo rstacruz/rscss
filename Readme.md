@@ -218,10 +218,10 @@ Other solutions
 
 ### BEM
 
-[Bem] in nice but syntax is dirty. However, RSCSS pretty much follows BEM conventions, only with a different syntax.
+[BEM] in nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.
 
 ```html
-/* bem */
+<!-- BEM -->
 <form class='site-search site-search--full'>
   <input  class='site-search__field' type='text'>
   <button class='site-search__button'></button>
@@ -248,4 +248,4 @@ Summary
 * Remember you can extend to make things simple
 
 [Smacss]: https://smacss.com/
-[Bem]: http://bem.info/
+[BEM]: http://bem.info/
