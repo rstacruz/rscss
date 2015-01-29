@@ -79,6 +79,12 @@ Elements may also have modifiers.
 }
 ```
 
+Why a dash? Because:
+
+* it prevents ambiguity with elements
+* a CSS class can only start with a letter, `_` or `-`
+* it kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`)
+
 ### Nested components
 
 Sometimes it's necessary to nest components.
