@@ -87,9 +87,19 @@ Why a dash? Because:
 
 ### Nested components
 
+![](images/component-nesting.png)
+
 Sometimes it's necessary to nest components.
 
-(to be explained)
+```html
+<div class='article-link'>
+  <div class='vote-box'>
+    ...
+  </div>
+  <h3 class='title'>...</h3>
+  <p class='meta'>...</p>
+</div>
+```
 
 ### Simplifying nested components
 
@@ -97,7 +107,7 @@ Sometimes, when nesting components, your markup can get dirty:
 
 ```html
 <div class='search-form'>
-  <input type='text' class='input'>
+  <input  class='input' type='text'>
   <button class='search-button -red -large'></button>
 </div>
 ```
@@ -185,7 +195,7 @@ Be careful about nested components where the nested component has an element of 
 
 ```html
 <article class='article-link'>
-  <div class='vote-button'>
+  <div class='vote-box'>
     <button class='up'></button>
     <button class='down'></button>
     <span class='count'>4</span>
