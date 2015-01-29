@@ -118,9 +118,9 @@ In sass-rails and stylus, this makes including all of them easy:
 @import 'components/*';
 ```
 
-### No more than 1 level of nesting
+### Avoid over-nesting
 
-It's easy to get lost with too much nesting.
+Use no more than 1 level of nesting. It's easy to get lost with too much nesting.
 
 ```scss
 /* bad */
