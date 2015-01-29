@@ -56,11 +56,11 @@ If you're going to use elements that don't have class names, make sure that you 
 }
 ```
 
-### Modifiers
+### Variants
 
 ![](images/component-modifiers.png)
 
-Components may have modifiers. Modifiers will be prefixed by a dash (`-`).
+Components may have variants. Their classes will be prefixed by a dash (`-`).
 
 ```scss
 .like-button {
@@ -70,7 +70,7 @@ Components may have modifiers. Modifiers will be prefixed by a dash (`-`).
 }
 ```
 
-Elements may also have modifiers.
+Elements may also have variants.
 
 ```scss
 .shopping-card {
@@ -132,6 +132,40 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 }
 ```
 
+### Layout
+
+![](images/layouts.png)
+
+:construction:
+Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
+
+* Positioning (`position`, `top`, `left`, `right`, `bottom`)
+* Floats (`float`, `clear`)
+* Margins (`margin`)
+* Width (`width`... but `max-width` is fine)
+
+If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
+
+```css
+.article-list {
+  & {
+    @include clearfix;
+  }
+
+  .article-card {
+    width: 33.3%;
+    float: left;
+  }
+}
+
+.article-card {
+  & { /* ... */ }
+  .image { /* ... */ }
+  .title { /* ... */ }
+  .category { /* ... */ }
+}
+```
+
 <br>
 
 CSS structure
@@ -146,7 +180,7 @@ CSS structure
   .field { /* ... */ }
   .label { /* ... */ }
 
-  // modifiers
+  // variants
   &.-small { /* ... */ }
   &.-wide { /* ... */ }
 }
@@ -223,6 +257,13 @@ In this case, `.article-link .count` will also apply to the `.vote-button .count
 
 <br>
 
+But...
+------
+
+### But dashes suck
+
+Well then don't use it, but keep the rest of the ideas in place (components, elements, variants).
+
 Other solutions
 ---------------
 
@@ -246,6 +287,17 @@ Other solutions
 </form>
 ```
 
+### Terminologies
+
+The same concepts exist in similar ways in other CSS structuring ideologies.
+
+| RSCSS     | BEM      | SMACSS        |
+| ---       | ---      | ---           |
+| Component | Block    | Module        |
+| Element   | Element  | ?             |
+| Layout    | ?        | Layout        |
+| Variant   | Modifier | Theme & State |
+
 <br>
 
 Summary
@@ -253,7 +305,7 @@ Summary
 
 * Think in **components**, named with 2 words (`.screenshot-image`)
 * Components have **elements**, named with 1 word (`.blog-post .title`)
-* Name **modifiers** with a dash prefix (`.shop-banner.-with-icon`)
+* Name **variants** with a dash prefix (`.shop-banner.-with-icon`)
 * Components can nest
 * Remember you can extend to make things simple
 
