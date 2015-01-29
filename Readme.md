@@ -177,6 +177,22 @@ Other solutions
 
 [Bem] in nice but syntax is dirty. However, RSCSS pretty much follows BEM conventions, only with a different syntax.
 
+```html
+/* bem */
+<form class='site-search site-search--full'>
+  <input  class='site-search__field' type='text'>
+  <button class='site-search__button'></button>
+</form>
+```
+
+```html
+<!-- rscss -->
+<form class='site-search -full'>
+  <input  class='field' type='text'>
+  <button class='button'></button>
+</form>
+```
+
 <br>
 
 Summary
