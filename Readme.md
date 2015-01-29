@@ -176,6 +176,43 @@ Consider instead:
 
 <br>
 
+Pitfalls
+--------
+
+### Bleeding through nested components
+
+Be careful about nested components where the nested component has an element of the same name.
+
+```html
+<article class='article-link'>
+  <div class='vote-button'>
+    <button class='up'></button>
+    <button class='down'></button>
+    <span class='count'>4</span>
+  </div>
+
+  <h3 class='title'>Article title</h3>
+  <p class='count'>3 votes</p>
+</article>
+```
+
+```scss
+.article-link {
+  .title { /* ... */ }
+  .count { /* ... (!!!) */ }
+}
+
+.vote-button {
+  .up { /* ... */ }
+  .down { /* ... */ }
+  .count { /* ... */ }
+}
+```
+
+In this case, `.article-link .count` will also apply to the `.vote-button .count` element. To prevent this, you may need to use descendant selectors.
+
+<br>
+
 Other solutions
 ---------------
 
