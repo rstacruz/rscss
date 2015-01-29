@@ -136,13 +136,12 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
 ![](images/layouts.png)
 
-:construction:
 Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
 
 * Positioning (`position`, `top`, `left`, `right`, `bottom`)
 * Floats (`float`, `clear`)
 * Margins (`margin`)
-* Width (`width`... but `max-width` is fine)
+* Dimensions (`width`, `height`... but `max-width` is fine)
 
 If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
@@ -171,7 +170,7 @@ If you need to define these, try to define them in whatever context whey will be
 CSS structure
 -------------
 
-### One CSS file per component
+### One component per file
 
 ```scss
 /* css/components/search-form.scss */
