@@ -42,9 +42,24 @@ Each component may have elements. They should have classes that are only **one w
 * `.article-card .title`
 * `.article-card .author`
 
+```scss
+.search-form {
+  .field { /* ... */ }
+  .label { /* ... */ }
+}
+.article-card {
+  .title { /* ... */ }
+  .author { /* ... */ }
+}
+```
+
 If you're going to use elements that don't have class names, make sure that you use the `>` descendant selectors so as to avoid clashes with sub-components.
 
-* `.article-card > h3`
+```scss
+.article-card {
+  > h3 { /* ... */ }
+}
+```
 
 ### Modifiers
 
@@ -52,16 +67,28 @@ If you're going to use elements that don't have class names, make sure that you 
 
 Components may have modifiers. Modifiers will be prefixed by a dash (`-`).
 
-* `.like-button.-wide`
-* `.like-button.-disabled`
+```scss
+.like-button {
+  &.-wide { /* ... */ }
+  *.-short { /* ... */ }
+  &.-disabled { /* ... */ }
+}
+```
 
 Elements may also have modifiers.
 
-* `.shopping-cart .title.-small`
+```scss
+.shopping-card {
+  .title { /* ... */ }
+  .title.-small { /* ... */ }
+}
+```
 
 ### Nested components
 
 Sometimes it's necessary to nest components.
+
+(to be explained)
 
 ### Simplifying nested components
 
@@ -70,7 +97,8 @@ Sometimes, when nesting components, your markup can get dirty:
 ```html
 <div class='search-form'>
   <input type='text' class='input'>
-  <button class='search-button -red -large'>
+  <button class='search-button -red -large'></button>
+</div>
 ```
 
 You can simplify this by using your CSS preprocessor's `@extend` mechanism:
@@ -78,7 +106,8 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 ```html
 <div class='search-form'>
   <input type='text' class='input'>
-  <button class='submit'>
+  <button class='submit'></button>
+</div>
 ```
 
 ```scss
