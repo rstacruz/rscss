@@ -3,7 +3,7 @@ RSCSS
 
 Reasonable standard for CSS stylesheet structure.
 
-This document is as work in progress.
+:construction: This document is a work in progress.
 
 <br>
 
