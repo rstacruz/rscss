@@ -37,11 +37,6 @@ Think of each piece of your UI is an individual "component." Components will be 
 
 Each component may have elements. They should have classes that are only **one word**.
 
-* `.search-form .field`
-* `.search-form .label`
-* `.article-card .title`
-* `.article-card .author`
-
 ```scss
 .search-form {
   .field { /* ... */ }
