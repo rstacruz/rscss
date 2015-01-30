@@ -1,7 +1,7 @@
 RSCSS
 =====
 
-Reasonable Standard* for CSS Stylesheet Structures.
+Reasonable Standard* for CSS Stylesheet Structure.
 
 (`*`: "S" can also stand for "suggestions")
 
@@ -79,7 +79,7 @@ Components may have variants. Their classes will be prefixed by a dash (`-`).
 ```scss
 .like-button {
   &.-wide { /* ... */ }
-  *.-short { /* ... */ }
+  &.-short { /* ... */ }
   &.-disabled { /* ... */ }
 }
 ```
