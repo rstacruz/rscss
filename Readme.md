@@ -278,7 +278,7 @@ But...
 
 ### But dashes suck
 
-Well then don't use it, but keep the rest of the ideas in place (components, elements, variants).
+You're free to omit it and just use regular words, but keep the rest of the ideas in place (components, elements, variants).
 
 ### But I can't think of 2 words
 
