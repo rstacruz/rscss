@@ -122,7 +122,7 @@ Sometimes, when nesting components, your markup can get dirty:
 
 ```html
 <div class='search-form'>
-  <input  class='input' type='text'>
+  <input class='input' type='text'>
   <button class='search-button -red -large'></button>
 </div>
 ```
@@ -131,7 +131,7 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
 ```html
 <div class='search-form'>
-  <input type='text' class='input'>
+  <input class='input' type='text'>
   <button class='submit'></button>
 </div>
 ```
