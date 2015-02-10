@@ -5,7 +5,7 @@ Reasonable Standard* for CSS Stylesheet Structure.
 
 (`*`: or **S** can also stand for "suggestions")
 
-:construction: This document is a work in progress.
+:construction: This document is a work in progress. See the [changelog](History.md) for summaries of changes.
 
 <br>
 
@@ -46,7 +46,8 @@ Think of each piece of your UI is an individual "component." Components will be 
 }
 ```
 
-**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant
+gselectors.
 
 ```scss
 .article-card {
