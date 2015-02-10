@@ -3,7 +3,7 @@ RSCSS
 
 Reasonable Standard* for CSS Stylesheet Structure.
 
-(`*`: "S" can also stand for "suggestions")
+(`*`: or **S** can also stand for "suggestions")
 
 :construction: This document is a work in progress.
 
@@ -37,38 +37,42 @@ Think of each piece of your UI is an individual "component." Components will be 
 
 ![](images/component-elements.png)
 
-Each component may have elements. They should have classes that are only **one word**.
+**Naming:** Each component may have elements. They should have classes that are only **one word**.
 
 ```scss
 .search-form {
-  .field { /* ... */ }
-  .label { /* ... */ }
-}
-.article-card {
-  .title { /* ... */ }
-  .author { /* ... */ }
+  > .field { /* ... */ }
+  > .label { /* ... */ }
 }
 ```
 
-For those that need two or more words, concatenate them without dashes or underscores.
+**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than child selectors.
+
+```scss
+.article-card {
+  > .title { /* ... */ }
+  > .author { /* ... */ }
+}
+```
+
+**On multiple words:** For those that need two or more words, concatenate them without dashes or underscores.
 
 ```scss
 .profile-box {
-  .firstname { /* ... */ }
-  .lastname { /* ... */ }
-  .avatar { /* ... */ }
+  > .firstname { /* ... */ }
+  > .lastname { /* ... */ }
+  > .avatar { /* ... */ }
 }
 ```
 
-If you're going to use elements that don't have class names, make sure that you use the `>` descendant selectors so as to avoid clashes with sub-components.
+**Avoid tag selectors:** use classnames and avoid tag selectors whenever possible.
 
 ```scss
 .article-card {
-  > h3 { /* ... */ }
+  > h3    { /* bad */ }
+  > .name { /* better */ }
 }
 ```
-
-But in general, use classnames and avoid tag selectors whenever possible. MDN [discourages](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Tag-categorized_rules_should_never_contain_a_child_selector.21) child selectors being used with tags.
 
 ### Variants
 
@@ -88,8 +92,8 @@ Elements may also have variants.
 
 ```scss
 .shopping-card {
-  .title { /* ... */ }
-  .title.-small { /* ... */ }
+  > .title { /* ... */ }
+  > .title.-small { /* ... */ }
 }
 ```
 
@@ -139,7 +143,7 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 ```scss
 // sass
 .search-form {
-  .submit {
+  > .submit {
     @extend .search-button;
     @extend .search-button.-red;
     @extend .search-button.-large;
@@ -168,7 +172,7 @@ If you need to define these, try to define them in whatever context whey will be
     @include clearfix;
   }
 
-  .article-card {
+  > .article-card {
     width: 33.3%;
     float: left;
   }
@@ -176,9 +180,9 @@ If you need to define these, try to define them in whatever context whey will be
 
 .article-card {
   & { /* ... */ }
-  .image { /* ... */ }
-  .title { /* ... */ }
-  .category { /* ... */ }
+  > .image { /* ... */ }
+  > .title { /* ... */ }
+  > .category { /* ... */ }
 }
 ```
 
@@ -192,9 +196,9 @@ CSS structure
 ```scss
 /* css/components/search-form.scss */
 .search-form {
-  .button { /* ... */ }
-  .field { /* ... */ }
-  .label { /* ... */ }
+  > .button { /* ... */ }
+  > .field { /* ... */ }
+  > .label { /* ... */ }
 
   // variants
   &.-small { /* ... */ }
@@ -215,10 +219,10 @@ Use no more than 1 level of nesting. It's easy to get lost with too much nesting
 ```scss
 /* bad */
 .image-frame {
-  .description {
+  > .description {
     /* ... */
 
-    > strong {
+    > .icon {
       /* ... */
     }
   }
@@ -229,8 +233,8 @@ Consider instead:
 
 ```scss
 .image-frame {
-  .description { /* ... */ }
-  .description > strong { /* ... */ }
+  > .description { /* ... */ }
+  > .description > .icon { /* ... */ }
 }
 ```
 
@@ -258,23 +262,25 @@ Be careful about nested components where the nested component has an element of 
 
 ```scss
 .article-link {
-  .title { /* ... */ }
-  .count { /* ... (!!!) */ }
+  > .title { /* ... */ }
+  > .count { /* ... (!!!) */ }
 }
 
 .vote-button {
-  .up { /* ... */ }
-  .down { /* ... */ }
-  .count { /* ... */ }
+  > .up { /* ... */ }
+  > .down { /* ... */ }
+  > .count { /* ... */ }
 }
 ```
 
-In this case, `.article-link .count` will also apply to the `.vote-button .count` element. To prevent this, you may need to use descendant selectors.
+In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
 
 <br>
 
 But...
 ------
+
+Some people may have apprehensions to these convention, such as:
 
 ### But dashes suck
 
@@ -342,3 +348,5 @@ Summary
 
 [Smacss]: https://smacss.com/
 [BEM]: http://bem.info/
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Avoid_the_descendant_selector.21
