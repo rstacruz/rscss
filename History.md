@@ -1,4 +1,4 @@
-## v1.1.0
+## v1.1.0 - 2015-02-10
 
 Child selectors are now the preferred convention for styling elements. (#2)
 
