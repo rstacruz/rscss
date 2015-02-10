@@ -1,11 +1,11 @@
 RSCSS
 =====
 
-Reasonable Standard* for CSS Stylesheet Structure.
+**Reasonable Standard* for CSS Stylesheet Structure.**
+
+:construction: This document is a work in progress. See the [changelog](History.md) for summaries of revisions.
 
 (`*`: or **S** can also stand for "suggestions")
-
-:construction: This document is a work in progress. See the [changelog](History.md) for summaries of changes.
 
 <br>
 
