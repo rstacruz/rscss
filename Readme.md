@@ -42,7 +42,7 @@ Think of each piece of your UI is an individual "component." Components will be 
 ```scss
 .search-form {
   > .field { /* ... */ }
-  > .label { /* ... */ }
+  > .action { /* ... */ }
 }
 ```
 
