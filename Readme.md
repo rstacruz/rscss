@@ -46,7 +46,7 @@ Think of each piece of your UI is an individual "component." Components will be 
 }
 ```
 
-**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than child selectors.
+**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
 
 ```scss
 .article-card {
