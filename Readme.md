@@ -50,8 +50,8 @@ Think of each piece of your UI is an individual "component." Components will be 
 
 ```scss
 .article-card {
-  > .title { /* ... */ }
-  > .author { /* ... */ }
+  .title     { /* okay */ }
+  > .author  { /* ✓ better */ }
 }
 ```
 
