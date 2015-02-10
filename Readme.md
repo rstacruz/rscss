@@ -68,7 +68,7 @@ If you're going to use elements that don't have class names, make sure that you 
 }
 ```
 
-But in general, avoid tag selectors whenever possible.
+But in general, use classnames and avoid tag selectors whenever possible. MDN [discourages](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Tag-categorized_rules_should_never_contain_a_child_selector.21) child selectors being used with tags.
 
 ### Variants
 
