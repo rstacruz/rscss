@@ -155,16 +155,16 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
 ![](images/layouts.png)
 
-Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
+**Avoid positioning properties:** Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
 
 * Positioning (`position`, `top`, `left`, `right`, `bottom`)
 * Floats (`float`, `clear`)
 * Margins (`margin`)
 * Dimensions (`width`, `height`) *
 
-Exception here would be elements with a fixed width, such as avatars and logos.
+**Fixed dimensions:** Exception to these would be elements that have fixed width/heights, such as avatars and logos.
 
-If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
+**Define positioning in parents:** If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
 ```css
 .article-list {
