@@ -1,7 +1,8 @@
 RSCSS
 =====
 
-**Reasonable Standard* for CSS Stylesheet Structure.** (or **S** can also stand for "suggestions".)
+**Reasonable Standard* for CSS Stylesheet Structure.**<br>
+("S" can also stand for "suggestions".)
 
 See the [changelog](History.md) for summaries of revisions.
 
