@@ -330,6 +330,13 @@ Or for inlines:
 
 <br>
 
+Other resources
+---------------
+
+ * [ITCSS](https://speakerdeck.com/dafed/managing-css-projects-with-itcss#49) ("Inverted Triangle CSS") is a nice complement to any rscss structure.
+
+<br>
+
 Other solutions
 ---------------
 
