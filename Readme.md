@@ -26,7 +26,7 @@ Components
 
 Think in components. Consider of each piece of your UI as an individual "component."
 
-* **Naming components:**
+### Naming components
   Components will be named with **at least two words**, separated by a dash. Examples of a component:
 
   * A like button (`.like-button`)
@@ -41,9 +41,8 @@ Think in components. Consider of each piece of your UI as an individual "compone
 
 Elements are things inside your component.
 
-<br>
-
-* **Naming:** Each component may have elements. They should have classes that are only **one word**.
+### Naming elements
+Each component may have elements. They should have classes that are only **one word**.
 
   ```scss
   .search-form {
@@ -52,7 +51,8 @@ Elements are things inside your component.
   }
   ```
 
-* **Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+### Element selectors
+Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
 
   ```scss
   .article-card {
@@ -61,7 +61,8 @@ Elements are things inside your component.
   }
   ```
 
-* **On multiple words:** For those that need two or more words, concatenate them without dashes or underscores.
+### On multiple words
+For those that need two or more words, concatenate them without dashes or underscores.
 
   ```scss
   .profile-box {
@@ -71,7 +72,8 @@ Elements are things inside your component.
   }
   ```
 
-* **Avoid tag selectors:** use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+### Avoid tag selectors
+Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
 
   ```scss
   .article-card {
@@ -90,7 +92,8 @@ Components may have variants. Elements may have variants, too.
 
 <br>
 
-* **Naming variants:** Their classes will be prefixed by a dash (`-`).
+### Naming variants
+Classnames for variants will be prefixed by a dash (`-`).
 
   ```scss
   .like-button {
@@ -100,7 +103,8 @@ Components may have variants. Elements may have variants, too.
   }
   ```
 
-* **Element variants:** Elements may also have variants.
+### Element variants
+Elements may also have variants.
 
   ```scss
   .shopping-card {
@@ -109,7 +113,8 @@ Components may have variants. Elements may have variants, too.
   }
   ```
 
-* **Dash prefixes:** Dashes are the preferred prefix for variants.
+### Dash prefixes
+Dashes are the preferred prefix for variants.
 
   * It prevents ambiguity with elements.
   * a CSS class can only start with a letter, `_` or `-`.
@@ -136,8 +141,8 @@ Sometimes it's necessary to nest components. Here are some guidelines for doing 
 
 <br>
 
-* **Variants of nested components**:
-  A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+### Variants of nested components
+A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
 
 	```scss
 	.article-header {
@@ -164,35 +169,34 @@ Sometimes it's necessary to nest components. Here are some guidelines for doing 
 	}
 	```
 
-* **Simplifying nested components:**
+### Simplifying nested components
 Sometimes, when nesting components, your markup can get dirty:
 
-	```html
-	<div class='search-form'>
-	  <input class='input' type='text'>
-	  <button class='search-button -red -large'></button>
-	</div>
-	```
+```html
+<div class='search-form'>
+  <input class='input' type='text'>
+  <button class='search-button -red -large'></button>
+</div>
+```
 
-  You can simplify this by using your CSS preprocessor's `@extend` mechanism:
+You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
-	```html
-	<div class='search-form'>
-	  <input class='input' type='text'>
-	  <button class='submit'></button>
-	</div>
-	```
+```html
+<div class='search-form'>
+  <input class='input' type='text'>
+  <button class='submit'></button>
+</div>
+```
 
-	```scss
-	// sass
-	.search-form {
-	  > .submit {
-	    @extend .search-button;
-	    @extend .search-button.-red;
-	    @extend .search-button.-large;
-	  }
-	}
-	```
+```scss
+.search-form {
+  > .submit {
+    @extend .search-button;
+    @extend .search-button.-red;
+    @extend .search-button.-large;
+  }
+}
+```
 
 <br>
 
@@ -200,16 +204,19 @@ Sometimes, when nesting components, your markup can get dirty:
 
 ![](images/layouts.png)
 
-* **Avoid positioning properties:** Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
+### Avoid positioning properties
+Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
 
   * Positioning (`position`, `top`, `left`, `right`, `bottom`)
   * Floats (`float`, `clear`)
   * Margins (`margin`)
   * Dimensions (`width`, `height`) *
 
-* **Fixed dimensions:** Exception to these would be elements that have fixed width/heights, such as avatars and logos.
+### Fixed dimensions
+Exception to these would be elements that have fixed width/heights, such as avatars and logos.
 
-* **Define positioning in parents:** If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
+### Define positioning in parents
+If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
   ```css
   .article-list {
@@ -235,30 +242,33 @@ Sometimes, when nesting components, your markup can get dirty:
 
 ## Helpers
 
-* **Class helpers:** For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with *!important*. Use them *very* sparingly.
+```css
+._unmargin { margin: 0 !important; }
+._center { text-align: center !important; }
+._pull-left { float: left !important; }
+._pull-right { float: right !important; }
+```
 
-  ```css
-  ._unmargin { margin: 0 !important; }
-  ._center { text-align: center !important; }
-  ._pull-left { float: left !important; }
-  ._pull-right { float: right !important; }
-  ```
+For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with *!important*. Use them *very* sparingly.
 
-* **Naming helpers:** Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.
+### Naming helpers
+Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.
 
   ```html
   <div class='order-graphs -slim _unmargin'>
   </div>
   ```
 
-* **All helpers in one file:** place them in one file called `helpers`. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
+### Organizing helpers
+Place all helpers in one file called `helpers`. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
 
 <br>
 
 CSS structure
 -------------
 
-* **One component per file:** For each component, place them in their own file.
+### One component per file
+For each component, place them in their own file.
 
   ```scss
   /* css/components/search-form.scss */
@@ -273,13 +283,14 @@ CSS structure
   }
   ```
 
-* **Use glob matching:** In sass-rails and stylus, this makes including all of them easy:
+### Use glob matching
+In sass-rails and stylus, this makes including all of them easy:
 
   ```scss
   @import 'components/*';
   ```
 
-* **Avoid over-nesting**:
+### Avoid over-nesting
 Use no more than 1 level of nesting. It's easy to get lost with too much nesting.
 
   ```scss
@@ -306,35 +317,36 @@ Use no more than 1 level of nesting. It's easy to get lost with too much nesting
 Pitfalls
 --------
 
-* **Bleeding through nested components**: Be careful about nested components where the nested component has an element of the same name.
+### Bleeding through nested components
+Be careful about nested components where the nested component has an element of the same name.
 
-	```html
-	<article class='article-link'>
-	  <div class='vote-box'>
-	    <button class='up'></button>
-	    <button class='down'></button>
-	    <span class='count'>4</span>
-	  </div>
+```html
+<article class='article-link'>
+ <div class='vote-box'>
+    <button class='up'></button>
+    <button class='down'></button>
+    <span class='count'>4</span>
+  </div>
 
-	  <h3 class='title'>Article title</h3>
-	  <p class='count'>3 votes</p>
-	</article>
-	```
+  <h3 class='title'>Article title</h3>
+  <p class='count'>3 votes</p>
+</article>
+```
 
-	```scss
-	.article-link {
-	  > .title { /* ... */ }
-	  > .count { /* ... (!!!) */ }
-	}
+```scss
+.article-link {
+  > .title { /* ... */ }
+  > .count { /* ... (!!!) */ }
+}
 
-	.vote-button {
-	  > .up { /* ... */ }
-	  > .down { /* ... */ }
-	  > .count { /* ... */ }
-	}
-	```
+.vote-button {
+  > .up { /* ... */ }
+  > .down { /* ... */ }
+  > .count { /* ... */ }
+}
+```
 
-  In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
+In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
 
 <br>
 
@@ -370,34 +382,34 @@ Other resources
 Other solutions
 ---------------
 
-* **BEM**:
+### BEM
 [BEM] in nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.
 
-	```html
-	<!-- BEM -->
-	<form class='site-search site-search--full'>
-	  <input  class='site-search__field' type='text'>
-	  <button class='site-search__button'></button>
-	</form>
-	```
+```html
+<!-- BEM -->
+<form class='site-search site-search--full'>
+  <input  class='site-search__field' type='text'>
+  <button class='site-search__button'></button>
+</form>
+```
 
-	```html
-	<!-- rscss -->
-	<form class='site-search -full'>
-	  <input  class='field' type='text'>
-	  <button class='button'></button>
-	</form>
-	```
+```html
+<!-- rscss -->
+<form class='site-search -full'>
+  <input  class='field' type='text'>
+  <button class='button'></button>
+</form>
+```
 
-* **Terminologies**:
+### Terminologies
 The same concepts exist in similar ways in other CSS structuring ideologies.
 
-	| RSCSS     | BEM      | SMACSS        |
-	| ---       | ---      | ---           |
-	| Component | Block    | Module        |
-	| Element   | Element  | ?             |
-	| Layout    | ?        | Layout        |
-	| Variant   | Modifier | Theme & State |
+| RSCSS     | BEM      | SMACSS        |
+| ---       | ---      | ---           |
+| Component | Block    | Module        |
+| Element   | Element  | ?             |
+| Layout    | ?        | Layout        |
+| Variant   | Modifier | Theme & State |
 
 <br>
 
