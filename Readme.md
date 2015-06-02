@@ -19,95 +19,108 @@ Any CSS greater than 1000 lines will get unwieldy. You'll eventually run into th
 
 <br>
 
-Structure
----------
-
-### Think in components
+Components
+----------
 
 ![](images/component-example.png)
 
-Think of each piece of your UI as an individual "component." Components will be named with **at least two words**, separated by a dash. Examples of a component:
+Think in components. Consider of each piece of your UI as an individual "component."
 
-* A like button (`.like-button`)
-* A search form (`.search-form`)
-* A news article card (`.article-card`)
+* **Naming components:**
+  Components will be named with **at least two words**, separated by a dash. Examples of a component:
 
-### Elements
+  * A like button (`.like-button`)
+  * A search form (`.search-form`)
+  * A news article card (`.article-card`)
+
+<br>
+
+## Elements
 
 ![](images/component-elements.png)
 
-**Naming:** Each component may have elements. They should have classes that are only **one word**.
+Elements are things inside your component.
 
-```scss
-.search-form {
-  > .field { /* ... */ }
-  > .action { /* ... */ }
-}
-```
+<br>
 
-**Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+* **Naming:** Each component may have elements. They should have classes that are only **one word**.
 
-```scss
-.article-card {
-  .title     { /* okay */ }
-  > .author  { /* ✓ better */ }
-}
-```
+  ```scss
+  .search-form {
+    > .field { /* ... */ }
+    > .action { /* ... */ }
+  }
+  ```
 
-**On multiple words:** For those that need two or more words, concatenate them without dashes or underscores.
+* **Selectors:** Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
 
-```scss
-.profile-box {
-  > .firstname { /* ... */ }
-  > .lastname { /* ... */ }
-  > .avatar { /* ... */ }
-}
-```
+  ```scss
+  .article-card {
+    .title     { /* okay */ }
+    > .author  { /* ✓ better */ }
+  }
+  ```
 
-**Avoid tag selectors:** use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+* **On multiple words:** For those that need two or more words, concatenate them without dashes or underscores.
 
-```scss
-.article-card {
-  > h3    { /* ... */ }
-  > .name { /* ✓ better */ }
-}
-```
+  ```scss
+  .profile-box {
+    > .firstname { /* ... */ }
+    > .lastname { /* ... */ }
+    > .avatar { /* ... */ }
+  }
+  ```
 
-### Variants
+* **Avoid tag selectors:** use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+
+  ```scss
+  .article-card {
+    > h3    { /* ✗ avoid */ }
+    > .name { /* ✓ better */ }
+  }
+  ```
+
+<br>
+
+## Variants
 
 ![](images/component-modifiers.png)
 
-Components may have variants. Their classes will be prefixed by a dash (`-`).
+Components may have variants. Elements may have variants, too.
 
-```scss
-.like-button {
-  &.-wide { /* ... */ }
-  &.-short { /* ... */ }
-  &.-disabled { /* ... */ }
-}
-```
+<br>
 
-Elements may also have variants.
+* **Naming variants:** Their classes will be prefixed by a dash (`-`).
 
-```scss
-.shopping-card {
-  > .title { /* ... */ }
-  > .title.-small { /* ... */ }
-}
-```
+  ```scss
+  .like-button {
+    &.-wide { /* ... */ }
+    &.-short { /* ... */ }
+    &.-disabled { /* ... */ }
+  }
+  ```
 
-Why a dash? Because:
+* **Element variants:** Elements may also have variants.
 
-* it prevents ambiguity with elements
-* a CSS class can only start with a letter, `_` or `-`
-* dashes are easier to type than underscores
-* it kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`)
+  ```scss
+  .shopping-card {
+    > .title { /* ... */ }
+    > .title.-small { /* ... */ }
+  }
+  ```
 
-### Nested components
+* **Dash prefixes:** Dashes are the preferred prefix for variants.
+
+  * It prevents ambiguity with elements.
+  * a CSS class can only start with a letter, `_` or `-`.
+  * dashes are easier to type than underscores.
+  * it kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`)
+
+<br>
+
+## Nested components
 
 ![](images/component-nesting.png)
-
-Sometimes it's necessary to nest components.
 
 ```html
 <div class='article-link'>
@@ -119,233 +132,231 @@ Sometimes it's necessary to nest components.
 </div>
 ```
 
-### Variants of nested components
+Sometimes it's necessary to nest components. Here are some guidelines for doing that.
 
-A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+<br>
 
-```scss
-.article-header {
-  > .vote-box > .up { /* avoid this */ }
-}
-```
+* **Variants of nested components**:
+  A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
 
-Instead, prefer to add a variant to the nested component and apply it from the containing component.
+	```scss
+	.article-header {
+	  > .vote-box > .up { /* ✗ avoid this */ }
+	}
+	```
 
-```html
-<div class='article-header'>
-  <div class='vote-box -highlight'>
-    ...
-  </div>
-  ...
-</div>
-```
+  Instead, prefer to add a variant to the nested component and apply it from the containing component.
 
-```scss
-.vote-box {
-  &.-highlight {
-    > .up { /* ... */ }
-  }
-}
-```
+	```html
+	<div class='article-header'>
+	  <div class='vote-box -highlight'>
+	    ...
+	  </div>
+	  ...
+	</div>
+	```
 
-### Simplifying nested components
+	```scss
+	.vote-box {
+	  &.-highlight {
+	    > .up { /* ... */ }
+	  }
+	}
+	```
 
+* **Simplifying nested components:**
 Sometimes, when nesting components, your markup can get dirty:
 
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='search-button -red -large'></button>
-</div>
-```
+	```html
+	<div class='search-form'>
+	  <input class='input' type='text'>
+	  <button class='search-button -red -large'></button>
+	</div>
+	```
 
-You can simplify this by using your CSS preprocessor's `@extend` mechanism:
+  You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='submit'></button>
-</div>
-```
+	```html
+	<div class='search-form'>
+	  <input class='input' type='text'>
+	  <button class='submit'></button>
+	</div>
+	```
 
-```scss
-// sass
-.search-form {
-  > .submit {
-    @extend .search-button;
-    @extend .search-button.-red;
-    @extend .search-button.-large;
-  }
-}
-```
+	```scss
+	// sass
+	.search-form {
+	  > .submit {
+	    @extend .search-button;
+	    @extend .search-button.-red;
+	    @extend .search-button.-large;
+	  }
+	}
+	```
 
-### Layout
+<br>
+
+## Layout
 
 ![](images/layouts.png)
 
-**Avoid positioning properties:** Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
+* **Avoid positioning properties:** Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
 
-* Positioning (`position`, `top`, `left`, `right`, `bottom`)
-* Floats (`float`, `clear`)
-* Margins (`margin`)
-* Dimensions (`width`, `height`) *
+  * Positioning (`position`, `top`, `left`, `right`, `bottom`)
+  * Floats (`float`, `clear`)
+  * Margins (`margin`)
+  * Dimensions (`width`, `height`) *
 
-**Fixed dimensions:** Exception to these would be elements that have fixed width/heights, such as avatars and logos.
+* **Fixed dimensions:** Exception to these would be elements that have fixed width/heights, such as avatars and logos.
 
-**Define positioning in parents:** If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
+* **Define positioning in parents:** If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
-```css
-.article-list {
-  & {
-    @include clearfix;
+  ```css
+  .article-list {
+    & {
+      @include clearfix;
+    }
+
+    > .article-card {
+      width: 33.3%;
+      float: left;
+    }
   }
 
-  > .article-card {
-    width: 33.3%;
-    float: left;
+  .article-card {
+    & { /* ... */ }
+    > .image { /* ... */ }
+    > .title { /* ... */ }
+    > .category { /* ... */ }
   }
-}
+  ```
 
-.article-card {
-  & { /* ... */ }
-  > .image { /* ... */ }
-  > .title { /* ... */ }
-  > .category { /* ... */ }
-}
-```
+<br>
 
-### Helpers
+## Helpers
 
-**Class helpers:** For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with *!important*. Use them *very* sparingly.
+* **Class helpers:** For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with *!important*. Use them *very* sparingly.
 
-```css
-._unmargin { margin: 0 !important; }
-._center { text-align: center !important; }
-._pull-left { float: left !important; }
-._pull-right { float: right !important; }
-```
+  ```css
+  ._unmargin { margin: 0 !important; }
+  ._center { text-align: center !important; }
+  ._pull-left { float: left !important; }
+  ._pull-right { float: right !important; }
+  ```
 
-**Prefix classnames with an underscore.** This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.
+* **Naming helpers:** Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.
 
-```html
-<div class='order-graphs -slim _unmargin'>
-</div>
-```
+  ```html
+  <div class='order-graphs -slim _unmargin'>
+  </div>
+  ```
 
-**All in one file:** place them in one file called `helpers`. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
+* **All helpers in one file:** place them in one file called `helpers`. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
 
 <br>
 
 CSS structure
 -------------
 
-### One component per file
+* **One component per file:** For each component, place them in their own file.
 
-```scss
-/* css/components/search-form.scss */
-.search-form {
-  > .button { /* ... */ }
-  > .field { /* ... */ }
-  > .label { /* ... */ }
+  ```scss
+  /* css/components/search-form.scss */
+  .search-form {
+    > .button { /* ... */ }
+    > .field { /* ... */ }
+    > .label { /* ... */ }
 
-  // variants
-  &.-small { /* ... */ }
-  &.-wide { /* ... */ }
-}
-```
+    // variants
+    &.-small { /* ... */ }
+    &.-wide { /* ... */ }
+  }
+  ```
 
-In sass-rails and stylus, this makes including all of them easy:
+* **Use glob matching:** In sass-rails and stylus, this makes including all of them easy:
 
-```scss
-@import 'components/*';
-```
+  ```scss
+  @import 'components/*';
+  ```
 
-### Avoid over-nesting
-
+* **Avoid over-nesting**:
 Use no more than 1 level of nesting. It's easy to get lost with too much nesting.
 
-```scss
-/* bad */
-.image-frame {
-  > .description {
-    /* ... */
-
-    > .icon {
+  ```scss
+  /* ✗ Avoid: 3 levels of nesting */
+  .image-frame {
+    > .description {
       /* ... */
+
+      > .icon {
+        /* ... */
+      }
     }
   }
-}
-```
 
-Consider instead:
-
-```scss
-.image-frame {
-  > .description { /* ... */ }
-  > .description > .icon { /* ... */ }
-}
-```
+  /* ✓ Better: 2 levels */
+  .image-frame {
+    > .description { /* ... */ }
+    > .description > .icon { /* ... */ }
+  }
+  ```
 
 <br>
 
 Pitfalls
 --------
 
-### Bleeding through nested components
+* **Bleeding through nested components**: Be careful about nested components where the nested component has an element of the same name.
 
-Be careful about nested components where the nested component has an element of the same name.
+	```html
+	<article class='article-link'>
+	  <div class='vote-box'>
+	    <button class='up'></button>
+	    <button class='down'></button>
+	    <span class='count'>4</span>
+	  </div>
 
-```html
-<article class='article-link'>
-  <div class='vote-box'>
-    <button class='up'></button>
-    <button class='down'></button>
-    <span class='count'>4</span>
-  </div>
+	  <h3 class='title'>Article title</h3>
+	  <p class='count'>3 votes</p>
+	</article>
+	```
 
-  <h3 class='title'>Article title</h3>
-  <p class='count'>3 votes</p>
-</article>
-```
+	```scss
+	.article-link {
+	  > .title { /* ... */ }
+	  > .count { /* ... (!!!) */ }
+	}
 
-```scss
-.article-link {
-  > .title { /* ... */ }
-  > .count { /* ... (!!!) */ }
-}
+	.vote-button {
+	  > .up { /* ... */ }
+	  > .down { /* ... */ }
+	  > .count { /* ... */ }
+	}
+	```
 
-.vote-button {
-  > .up { /* ... */ }
-  > .down { /* ... */ }
-  > .count { /* ... */ }
-}
-```
-
-In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
+  In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
 
 <br>
 
-But...
-------
+Apprehensions
+-------------
 
 Some people may have apprehensions to these convention, such as:
 
-### But dashes suck
-
+* **But dashes suck:**
 You're free to omit it and just use regular words, but keep the rest of the ideas in place (components, elements, variants).
 
-### But I can't think of 2 words
-
+* **But I can't think of 2 words:**
 Some components will only need one word to express their purpose, such as `alert`. In these cases, consider that using some suffixes will make it clearer that it's a block-level element:
 
-* `.alert-box`
-* `.alert-card`
-* `.alert-block`
+  * `.alert-box`
+  * `.alert-card`
+  * `.alert-block`
 
-Or for inlines:
+  Or for inlines:
 
-* `.link-button`
-* `.link-span`
+  * `.link-button`
+  * `.link-span`
 
 <br>
 
@@ -359,36 +370,34 @@ Other resources
 Other solutions
 ---------------
 
-### BEM
-
+* **BEM**:
 [BEM] in nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.
 
-```html
-<!-- BEM -->
-<form class='site-search site-search--full'>
-  <input  class='site-search__field' type='text'>
-  <button class='site-search__button'></button>
-</form>
-```
+	```html
+	<!-- BEM -->
+	<form class='site-search site-search--full'>
+	  <input  class='site-search__field' type='text'>
+	  <button class='site-search__button'></button>
+	</form>
+	```
 
-```html
-<!-- rscss -->
-<form class='site-search -full'>
-  <input  class='field' type='text'>
-  <button class='button'></button>
-</form>
-```
+	```html
+	<!-- rscss -->
+	<form class='site-search -full'>
+	  <input  class='field' type='text'>
+	  <button class='button'></button>
+	</form>
+	```
 
-### Terminologies
-
+* **Terminologies**:
 The same concepts exist in similar ways in other CSS structuring ideologies.
 
-| RSCSS     | BEM      | SMACSS        |
-| ---       | ---      | ---           |
-| Component | Block    | Module        |
-| Element   | Element  | ?             |
-| Layout    | ?        | Layout        |
-| Variant   | Modifier | Theme & State |
+	| RSCSS     | BEM      | SMACSS        |
+	| ---       | ---      | ---           |
+	| Component | Block    | Module        |
+	| Element   | Element  | ?             |
+	| Layout    | ?        | Layout        |
+	| Variant   | Modifier | Theme & State |
 
 <br>
 
