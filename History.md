@@ -1,3 +1,9 @@
+## [v1.3.0] - unreleased
+
+Reorganized the document into clearer sections. No content changes.
+
+* Introduction: updated this section to reflect the purpose of rscss better.
+
 ## [v1.2.0] - Jun  3, 2015
 
 * Add helpers.
@@ -14,3 +20,4 @@ Initial version.
 [#2]: https://github.com/rstacruz/rscss/issues/2
 [v1.1.0]: https://github.com/rstacruz/rscss/compare/v1.0.0...v1.1.0
 [v1.2.0]: https://github.com/rstacruz/rscss/compare/v1.1.0...v1.2.0
+[v1.3.0]: https://github.com/rstacruz/rscss/compare/v.1.2.0...v1.3.0
