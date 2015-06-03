@@ -1,4 +1,4 @@
-## [v1.3.0] - unreleased
+## [v1.3.0] - Jun  3, 2015
 
 Reorganized the document into clearer sections. No content changes.
 
