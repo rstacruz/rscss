@@ -164,9 +164,7 @@ A component may need to appear a certain way when nested in another component. A
 
 ```scss
 .vote-box {
-  &.-highlight {
-    > .up { /* ... */ }
-  }
+  &.-highlight > .up { /* ... */ }
 }
 ```
 
