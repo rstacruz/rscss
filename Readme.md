@@ -340,14 +340,14 @@ Be careful about nested components where the nested component has an element of 
   > .count { /* ... (!!!) */ }
 }
 
-.vote-button {
+.vote-box {
   > .up { /* ... */ }
   > .down { /* ... */ }
   > .count { /* ... */ }
 }
 ```
 
-In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-button .count` element. This is one of the reasons why child selectors are preferred.
+In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-box .count` element. This is one of the reasons why child selectors are preferred.
 
 <br>
 
