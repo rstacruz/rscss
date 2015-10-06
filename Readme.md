@@ -406,9 +406,9 @@ The same concepts exist in similar ways in other CSS structuring ideologies.
 | RSCSS     | BEM      | SMACSS        |
 | ---       | ---      | ---           |
 | Component | Block    | Module        |
-| Element   | Element  | ?             |
+| Element   | Element  | Sub-Component |
 | Layout    | ?        | Layout        |
-| Variant   | Modifier | Theme & State |
+| Variant   | Modifier | Sub-Module & State |
 
 <br>
 
