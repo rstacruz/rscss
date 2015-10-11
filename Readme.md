@@ -1,9 +1,7 @@
 RSCSS
 =====
 
-**Reasonable System for CSS Stylesheet Structure.**
-
-See the [changelog](History.md) for summaries of revisions.
+Reasonable System for CSS Stylesheet Structure.
 
 <br>
 
@@ -23,7 +21,7 @@ Any CSS greater than 1000 lines will get unwieldy. You'll eventually run into th
 Components
 ----------
 
-![](images/component-example.png)
+![](docs/images/component-example.png)
 
 Think in components. Consider of each piece of your UI as an individual "component."
 
@@ -38,7 +36,7 @@ Think in components. Consider of each piece of your UI as an individual "compone
 
 ## Elements
 
-![](images/component-elements.png)
+![](docs/images/component-elements.png)
 
 Elements are things inside your component.
 
@@ -87,7 +85,7 @@ Use classnames whenever possible. Tag selectors are fine, but they may come at a
 
 ## Variants
 
-![](images/component-modifiers.png)
+![](docs/images/component-modifiers.png)
 
 Components may have variants. Elements may have variants, too.
 
@@ -126,7 +124,7 @@ Dashes are the preferred prefix for variants.
 
 ## Nested components
 
-![](images/component-nesting.png)
+![](docs/images/component-nesting.png)
 
 ```html
 <div class='article-link'>
@@ -201,7 +199,7 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
 ## Layout
 
-![](images/layouts.png)
+![](docs/images/layouts.png)
 
 ### Avoid positioning properties
 Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
@@ -424,4 +422,4 @@ Summary
 [Smacss]: https://smacss.com/
 [BEM]: http://bem.info/
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Avoid_the_descendant_selector.21
+[1]: https://developer.mozilla.org/en-US/Web/Guide/CSS/Writing_efficient_CSS#Avoid_the_descendant_selector.21
