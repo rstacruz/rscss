@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=c86c2f30"><title>Layouts</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-layouts"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="layouts">Layouts</h1>
+<p><img src="images/layouts.png" alt=""></p>
+<h2 id="avoid-positioning-properties">Avoid positioning properties</h2>
+<p>Components should be made in a way that they&apos;re reusable in different contexts. Avoid putting these properties in components:</p>
+<ul>
+<li>Positioning (<code>position</code>, <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>)</li>
+<li>Floats (<code>float</code>, <code>clear</code>)</li>
+<li>Margins (<code>margin</code>)</li>
+<li>Dimensions (<code>width</code>, <code>height</code>) *</li>
+</ul>
+<h2 id="fixed-dimensions">Fixed dimensions</h2>
+<p>Exception to these would be elements that have fixed width/heights, such as avatars and logos.</p>
+<h2 id="define-positioning-in-parents">Define positioning in parents</h2>
+<p>If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the <em>list</em> component, not the component itself.</p>
+<pre><code class="lang-css">.article-list {
+  &amp; {
+    @include clearfix;
+  }
+
+  &gt; .article-card {
+    width: 33.3%;
+    float: left;
+  }
+}
+
+.article-card {
+  &amp; { /* ... */ }
+  &gt; .image { /* ... */ }
+  &gt; .title { /* ... */ }
+  &gt; .category { /* ... */ }
+}
+</code></pre>
+</div><div class="footer-nav"><div class="left"><a href="nested-components.html"><span class="title">Nested components</span></a></div><div class="right"><a href="helpers.html"><span class="label">Next: </span><span class="title">Helpers</span></a></div></div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a></li><li class="menu-item -level-1 -parent"><span class="title">Components</span><ul class="submenu"><li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a></li><li class="menu-item -level-2"><a href="elements.html" class="link title  link-elements">Elements</a></li><li class="menu-item -level-2"><a href="variants.html" class="link title  link-variants">Variants</a></li><li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a></li><li class="menu-item -level-2"><a href="layouts.html" class="link title -active link-layouts">Layouts</a><ul class="headings heading-list"><li class="heading-item -depth-2"><a href="#avoid-positioning-properties" class="hlink link-avoid-positioning-properties">Avoid positioning properties</a></li><li class="heading-item -depth-2"><a href="#fixed-dimensions" class="hlink link-fixed-dimensions">Fixed dimensions</a></li><li class="heading-item -depth-2"><a href="#define-positioning-in-parents" class="hlink link-define-positioning-in-parents">Define positioning in parents</a></li></ul></li><li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Structure</span><ul class="submenu"><li class="menu-item -level-2"><a href="css-structure.html" class="link title  link-css-structure">CSS Structure</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Notes</span><ul class="submenu"><li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a></li><li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a></li><li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a></li></ul></li><li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=09ab6609"></script></body></html>

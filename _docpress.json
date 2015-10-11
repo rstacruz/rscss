@@ -2,7 +2,6 @@
   "toc": {
     "sections": [
       {
-        "expand": true,
         "title": "rscss",
         "source": "README.md",
         "url": "index.html",
@@ -12,191 +11,219 @@
             "title": "Introduction",
             "depth": 2,
             "id": "introduction"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Components",
+        "sections": [
           {
-            "title": "Components",
-            "depth": 2,
-            "id": "components",
+            "title": "About components",
+            "source": "docs/components.md",
+            "url": "components.html",
+            "slug": "components",
             "headings": [
               {
                 "title": "Naming components",
-                "depth": 3,
+                "depth": 2,
                 "id": "naming-components"
               }
             ]
           },
           {
             "title": "Elements",
-            "depth": 2,
-            "id": "elements",
+            "source": "docs/elements.md",
+            "url": "elements.html",
+            "slug": "elements",
             "headings": [
               {
                 "title": "Naming elements",
-                "depth": 3,
+                "depth": 2,
                 "id": "naming-elements"
               },
               {
                 "title": "Element selectors",
-                "depth": 3,
+                "depth": 2,
                 "id": "element-selectors"
               },
               {
                 "title": "On multiple words",
-                "depth": 3,
+                "depth": 2,
                 "id": "on-multiple-words"
               },
               {
                 "title": "Avoid tag selectors",
-                "depth": 3,
+                "depth": 2,
                 "id": "avoid-tag-selectors"
               }
             ]
           },
           {
             "title": "Variants",
-            "depth": 2,
-            "id": "variants",
+            "source": "docs/variants.md",
+            "url": "variants.html",
+            "slug": "variants",
             "headings": [
               {
                 "title": "Naming variants",
-                "depth": 3,
+                "depth": 2,
                 "id": "naming-variants"
               },
               {
                 "title": "Element variants",
-                "depth": 3,
+                "depth": 2,
                 "id": "element-variants"
               },
               {
                 "title": "Dash prefixes",
-                "depth": 3,
+                "depth": 2,
                 "id": "dash-prefixes"
               }
             ]
           },
           {
             "title": "Nested components",
-            "depth": 2,
-            "id": "nested-components",
+            "source": "docs/nested-components.md",
+            "url": "nested-components.html",
+            "slug": "nested-components",
             "headings": [
               {
-                "title": "Variants of nested components",
-                "depth": 3,
-                "id": "variants-of-nested-components"
+                "title": "Variants",
+                "depth": 2,
+                "id": "variants"
               },
               {
                 "title": "Simplifying nested components",
-                "depth": 3,
+                "depth": 2,
                 "id": "simplifying-nested-components"
               }
             ]
           },
           {
-            "title": "Layout",
-            "depth": 2,
-            "id": "layout",
+            "title": "Layouts",
+            "source": "docs/layouts.md",
+            "url": "layouts.html",
+            "slug": "layouts",
             "headings": [
               {
                 "title": "Avoid positioning properties",
-                "depth": 3,
+                "depth": 2,
                 "id": "avoid-positioning-properties"
               },
               {
                 "title": "Fixed dimensions",
-                "depth": 3,
+                "depth": 2,
                 "id": "fixed-dimensions"
               },
               {
                 "title": "Define positioning in parents",
-                "depth": 3,
+                "depth": 2,
                 "id": "define-positioning-in-parents"
               }
             ]
           },
           {
             "title": "Helpers",
-            "depth": 2,
-            "id": "helpers",
+            "source": "docs/helpers.md",
+            "url": "helpers.html",
+            "slug": "helpers",
             "headings": [
               {
                 "title": "Naming helpers",
-                "depth": 3,
+                "depth": 2,
                 "id": "naming-helpers"
               },
               {
                 "title": "Organizing helpers",
-                "depth": 3,
+                "depth": 2,
                 "id": "organizing-helpers"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Structure",
+        "sections": [
           {
-            "title": "CSS structure",
-            "depth": 2,
-            "id": "css-structure",
+            "title": "CSS Structure",
+            "source": "docs/css-structure.md",
+            "url": "css-structure.html",
+            "slug": "css-structure",
             "headings": [
               {
                 "title": "One component per file",
-                "depth": 3,
+                "depth": 2,
                 "id": "one-component-per-file"
               },
               {
                 "title": "Use glob matching",
-                "depth": 3,
+                "depth": 2,
                 "id": "use-glob-matching"
               },
               {
                 "title": "Avoid over-nesting",
-                "depth": 3,
+                "depth": 2,
                 "id": "avoid-over-nesting"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Notes",
+        "sections": [
           {
             "title": "Pitfalls",
-            "depth": 2,
-            "id": "pitfalls",
+            "source": "docs/pitfalls.md",
+            "url": "pitfalls.html",
+            "slug": "pitfalls",
             "headings": [
               {
                 "title": "Bleeding through nested components",
-                "depth": 3,
+                "depth": 2,
                 "id": "bleeding-through-nested-components"
               }
             ]
           },
           {
             "title": "Apprehensions",
-            "depth": 2,
-            "id": "apprehensions"
+            "source": "docs/apprehensions.md",
+            "url": "apprehensions.html",
+            "slug": "apprehensions"
           },
           {
             "title": "Other resources",
-            "depth": 2,
-            "id": "other-resources"
-          },
-          {
-            "title": "Other solutions",
-            "depth": 2,
-            "id": "other-solutions",
+            "source": "docs/other-resources.md",
+            "url": "other-resources.html",
+            "slug": "other-resources",
             "headings": [
               {
-                "title": "BEM",
-                "depth": 3,
-                "id": "bem"
+                "title": "Other solutions",
+                "depth": 2,
+                "id": "other-solutions",
+                "headings": [
+                  {
+                    "title": "BEM",
+                    "depth": 3,
+                    "id": "bem"
+                  }
+                ]
               },
               {
                 "title": "Terminologies",
-                "depth": 3,
+                "depth": 2,
                 "id": "terminologies"
               }
             ]
-          },
-          {
-            "title": "Summary",
-            "depth": 2,
-            "id": "summary"
           }
         ]
+      },
+      {
+        "title": "Summary",
+        "source": "docs/summary.md",
+        "url": "summary.html",
+        "slug": "summary"
       }
     ]
   },
@@ -210,168 +237,170 @@
           "title": "Introduction",
           "depth": 2,
           "id": "introduction"
+        }
+      ]
+    },
+    "components.html": {
+      "source": "docs/components.md",
+      "title": "About components",
+      "slug": "components",
+      "headings": [
+        {
+          "title": "Naming components",
+          "depth": 2,
+          "id": "naming-components"
+        }
+      ]
+    },
+    "elements.html": {
+      "source": "docs/elements.md",
+      "title": "Elements",
+      "slug": "elements",
+      "headings": [
+        {
+          "title": "Naming elements",
+          "depth": 2,
+          "id": "naming-elements"
         },
         {
-          "title": "Components",
+          "title": "Element selectors",
           "depth": 2,
-          "id": "components",
-          "headings": [
-            {
-              "title": "Naming components",
-              "depth": 3,
-              "id": "naming-components"
-            }
-          ]
+          "id": "element-selectors"
         },
         {
-          "title": "Elements",
+          "title": "On multiple words",
           "depth": 2,
-          "id": "elements",
-          "headings": [
-            {
-              "title": "Naming elements",
-              "depth": 3,
-              "id": "naming-elements"
-            },
-            {
-              "title": "Element selectors",
-              "depth": 3,
-              "id": "element-selectors"
-            },
-            {
-              "title": "On multiple words",
-              "depth": 3,
-              "id": "on-multiple-words"
-            },
-            {
-              "title": "Avoid tag selectors",
-              "depth": 3,
-              "id": "avoid-tag-selectors"
-            }
-          ]
+          "id": "on-multiple-words"
         },
+        {
+          "title": "Avoid tag selectors",
+          "depth": 2,
+          "id": "avoid-tag-selectors"
+        }
+      ]
+    },
+    "variants.html": {
+      "source": "docs/variants.md",
+      "title": "Variants",
+      "slug": "variants",
+      "headings": [
+        {
+          "title": "Naming variants",
+          "depth": 2,
+          "id": "naming-variants"
+        },
+        {
+          "title": "Element variants",
+          "depth": 2,
+          "id": "element-variants"
+        },
+        {
+          "title": "Dash prefixes",
+          "depth": 2,
+          "id": "dash-prefixes"
+        }
+      ]
+    },
+    "nested-components.html": {
+      "source": "docs/nested-components.md",
+      "title": "Nested components",
+      "slug": "nested-components",
+      "headings": [
         {
           "title": "Variants",
           "depth": 2,
-          "id": "variants",
-          "headings": [
-            {
-              "title": "Naming variants",
-              "depth": 3,
-              "id": "naming-variants"
-            },
-            {
-              "title": "Element variants",
-              "depth": 3,
-              "id": "element-variants"
-            },
-            {
-              "title": "Dash prefixes",
-              "depth": 3,
-              "id": "dash-prefixes"
-            }
-          ]
+          "id": "variants"
         },
         {
-          "title": "Nested components",
+          "title": "Simplifying nested components",
           "depth": 2,
-          "id": "nested-components",
-          "headings": [
-            {
-              "title": "Variants of nested components",
-              "depth": 3,
-              "id": "variants-of-nested-components"
-            },
-            {
-              "title": "Simplifying nested components",
-              "depth": 3,
-              "id": "simplifying-nested-components"
-            }
-          ]
+          "id": "simplifying-nested-components"
+        }
+      ]
+    },
+    "layouts.html": {
+      "source": "docs/layouts.md",
+      "title": "Layouts",
+      "slug": "layouts",
+      "headings": [
+        {
+          "title": "Avoid positioning properties",
+          "depth": 2,
+          "id": "avoid-positioning-properties"
         },
         {
-          "title": "Layout",
+          "title": "Fixed dimensions",
           "depth": 2,
-          "id": "layout",
-          "headings": [
-            {
-              "title": "Avoid positioning properties",
-              "depth": 3,
-              "id": "avoid-positioning-properties"
-            },
-            {
-              "title": "Fixed dimensions",
-              "depth": 3,
-              "id": "fixed-dimensions"
-            },
-            {
-              "title": "Define positioning in parents",
-              "depth": 3,
-              "id": "define-positioning-in-parents"
-            }
-          ]
+          "id": "fixed-dimensions"
         },
         {
-          "title": "Helpers",
+          "title": "Define positioning in parents",
           "depth": 2,
-          "id": "helpers",
-          "headings": [
-            {
-              "title": "Naming helpers",
-              "depth": 3,
-              "id": "naming-helpers"
-            },
-            {
-              "title": "Organizing helpers",
-              "depth": 3,
-              "id": "organizing-helpers"
-            }
-          ]
+          "id": "define-positioning-in-parents"
+        }
+      ]
+    },
+    "helpers.html": {
+      "source": "docs/helpers.md",
+      "title": "Helpers",
+      "slug": "helpers",
+      "headings": [
+        {
+          "title": "Naming helpers",
+          "depth": 2,
+          "id": "naming-helpers"
         },
         {
-          "title": "CSS structure",
+          "title": "Organizing helpers",
           "depth": 2,
-          "id": "css-structure",
-          "headings": [
-            {
-              "title": "One component per file",
-              "depth": 3,
-              "id": "one-component-per-file"
-            },
-            {
-              "title": "Use glob matching",
-              "depth": 3,
-              "id": "use-glob-matching"
-            },
-            {
-              "title": "Avoid over-nesting",
-              "depth": 3,
-              "id": "avoid-over-nesting"
-            }
-          ]
+          "id": "organizing-helpers"
+        }
+      ]
+    },
+    "css-structure.html": {
+      "source": "docs/css-structure.md",
+      "title": "CSS Structure",
+      "slug": "css-structure",
+      "headings": [
+        {
+          "title": "One component per file",
+          "depth": 2,
+          "id": "one-component-per-file"
         },
         {
-          "title": "Pitfalls",
+          "title": "Use glob matching",
           "depth": 2,
-          "id": "pitfalls",
-          "headings": [
-            {
-              "title": "Bleeding through nested components",
-              "depth": 3,
-              "id": "bleeding-through-nested-components"
-            }
-          ]
+          "id": "use-glob-matching"
         },
         {
-          "title": "Apprehensions",
+          "title": "Avoid over-nesting",
           "depth": 2,
-          "id": "apprehensions"
-        },
+          "id": "avoid-over-nesting"
+        }
+      ]
+    },
+    "pitfalls.html": {
+      "source": "docs/pitfalls.md",
+      "title": "Pitfalls",
+      "slug": "pitfalls",
+      "headings": [
         {
-          "title": "Other resources",
+          "title": "Bleeding through nested components",
           "depth": 2,
-          "id": "other-resources"
-        },
+          "id": "bleeding-through-nested-components"
+        }
+      ]
+    },
+    "apprehensions.html": {
+      "source": "docs/apprehensions.md",
+      "title": "Apprehensions",
+      "slug": "apprehensions"
+    },
+    "other-resources.html": {
+      "source": "docs/other-resources.md",
+      "title": "Other resources",
+      "slug": "other-resources",
+      "headings": [
         {
           "title": "Other solutions",
           "depth": 2,
@@ -381,24 +410,35 @@
               "title": "BEM",
               "depth": 3,
               "id": "bem"
-            },
-            {
-              "title": "Terminologies",
-              "depth": 3,
-              "id": "terminologies"
             }
           ]
         },
         {
-          "title": "Summary",
+          "title": "Terminologies",
           "depth": 2,
-          "id": "summary"
+          "id": "terminologies"
         }
       ]
+    },
+    "summary.html": {
+      "source": "docs/summary.md",
+      "title": "Summary",
+      "slug": "summary"
     }
   },
   "sources": {
     "README.md": "index.html",
+    "docs/components.md": "components.html",
+    "docs/elements.md": "elements.html",
+    "docs/variants.md": "variants.html",
+    "docs/nested-components.md": "nested-components.html",
+    "docs/layouts.md": "layouts.html",
+    "docs/helpers.md": "helpers.html",
+    "docs/css-structure.md": "css-structure.html",
+    "docs/pitfalls.md": "pitfalls.html",
+    "docs/apprehensions.md": "apprehensions.html",
+    "docs/other-resources.md": "other-resources.html",
+    "docs/summary.md": "summary.html",
     "docs/docpress.json": "docpress.json",
     "docs/assets/custom.scss": "assets/custom.scss",
     "docs/images/component-elements.png": "images/component-elements.png",

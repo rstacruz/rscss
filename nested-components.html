@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=c86c2f30"><title>Nested components</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-nested-components"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="nested-components">Nested components</h1>
+<p><img src="images/component-nesting.png" alt=""></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;meta&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<p>Sometimes it&apos;s necessary to nest components. Here are some guidelines for doing that.</p>
+<h2 id="variants">Variants</h2>
+<p>A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-header</span> {
+  &gt; <span class="hljs-class">.vote-box</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* &#x2717; avoid this */</span> }
+}
+</code></pre>
+<p>Instead, prefer to add a variant to the nested component and apply it from the containing component.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-header&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box -highlight&apos;</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-scss"><span class="hljs-class">.vote-box</span> {
+  &amp;<span class="hljs-class">.-highlight</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h2 id="simplifying-nested-components">Simplifying nested components</h2>
+<p>Sometimes, when nesting components, your markup can get dirty:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-button -red -large&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<p>You can simplify this by using your CSS preprocessor&apos;s <code>@extend</code> mechanism:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;submit&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
+  &gt; <span class="hljs-class">.submit</span> {
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button</span>;</span>
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-red</span>;</span>
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-large</span>;</span>
+  }
+}
+</code></pre>
+</div><div class="footer-nav"><div class="left"><a href="variants.html"><span class="title">Variants</span></a></div><div class="right"><a href="layouts.html"><span class="label">Next: </span><span class="title">Layouts</span></a></div></div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a></li><li class="menu-item -level-1 -parent"><span class="title">Components</span><ul class="submenu"><li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a></li><li class="menu-item -level-2"><a href="elements.html" class="link title  link-elements">Elements</a></li><li class="menu-item -level-2"><a href="variants.html" class="link title  link-variants">Variants</a></li><li class="menu-item -level-2"><a href="nested-components.html" class="link title -active link-nested-components">Nested components</a><ul class="headings heading-list"><li class="heading-item -depth-2"><a href="#variants" class="hlink link-variants">Variants</a></li><li class="heading-item -depth-2"><a href="#simplifying-nested-components" class="hlink link-simplifying-nested-components">Simplifying nested components</a></li></ul></li><li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a></li><li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Structure</span><ul class="submenu"><li class="menu-item -level-2"><a href="css-structure.html" class="link title  link-css-structure">CSS Structure</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Notes</span><ul class="submenu"><li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a></li><li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a></li><li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a></li></ul></li><li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=09ab6609"></script></body></html>

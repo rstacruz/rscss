@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=c86c2f30"><title>Variants</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-variants"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="variants">Variants</h1>
+<p>Components may have variants. Elements may have variants, too.</p>
+<p><img src="images/component-modifiers.png" alt=""></p>
+<br>
+<h2 id="naming-variants">Naming variants</h2>
+<p>Classnames for variants will be prefixed by a dash (<code>-</code>).</p>
+<pre><code class="lang-scss"><span class="hljs-class">.like-button</span> {
+  &amp;<span class="hljs-class">.-wide</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-class">.-short</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-class">.-disabled</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h2 id="element-variants">Element variants</h2>
+<p>Elements may also have variants.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.shopping-card</span> {
+  &gt; <span class="hljs-class">.title</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.title</span><span class="hljs-class">.-small</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h2 id="dash-prefixes">Dash prefixes</h2>
+<p>Dashes are the preferred prefix for variants.</p>
+<ul>
+<li>It prevents ambiguity with elements.</li>
+<li>a CSS class can only start with a letter, <code>_</code> or <code>-</code>.</li>
+<li>dashes are easier to type than underscores.</li>
+<li>it kind of resembles switches in UNIX commands (<code>gcc -O2 -Wall -emit-last</code>)</li>
+</ul>
+</div><div class="footer-nav"><div class="left"><a href="elements.html"><span class="title">Elements</span></a></div><div class="right"><a href="nested-components.html"><span class="label">Next: </span><span class="title">Nested components</span></a></div></div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a></li><li class="menu-item -level-1 -parent"><span class="title">Components</span><ul class="submenu"><li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a></li><li class="menu-item -level-2"><a href="elements.html" class="link title  link-elements">Elements</a></li><li class="menu-item -level-2"><a href="variants.html" class="link title -active link-variants">Variants</a><ul class="headings heading-list"><li class="heading-item -depth-2"><a href="#naming-variants" class="hlink link-naming-variants">Naming variants</a></li><li class="heading-item -depth-2"><a href="#element-variants" class="hlink link-element-variants">Element variants</a></li><li class="heading-item -depth-2"><a href="#dash-prefixes" class="hlink link-dash-prefixes">Dash prefixes</a></li></ul></li><li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a></li><li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a></li><li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Structure</span><ul class="submenu"><li class="menu-item -level-2"><a href="css-structure.html" class="link title  link-css-structure">CSS Structure</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Notes</span><ul class="submenu"><li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a></li><li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a></li><li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a></li></ul></li><li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=09ab6609"></script></body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=c86c2f30"><title>Elements</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-elements"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="elements">Elements</h1>
+<p>Elements are things inside your component.</p>
+<p><img src="images/component-elements.png" alt=""></p>
+<h2 id="naming-elements">Naming elements</h2>
+<p>Each component may have elements. They should have classes that are only <strong>one word</strong>.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
+  &gt; <span class="hljs-class">.field</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.action</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h2 id="element-selectors">Element selectors</h2>
+<p>Prefer to use the <code>&gt;</code> child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
+  <span class="hljs-class">.title</span>     { <span class="pl-c">/* okay */</span> }
+  &gt; <span class="hljs-class">.author</span>  { <span class="pl-c">/* &#x2713; better */</span> }
+}
+</code></pre>
+<h2 id="on-multiple-words">On multiple words</h2>
+<p>For those that need two or more words, concatenate them without dashes or underscores.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.profile-box</span> {
+  &gt; <span class="hljs-class">.firstname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.lastname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.avatar</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h2 id="avoid-tag-selectors">Avoid tag selectors</h2>
+<p>Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
+  &gt; <span class="hljs-tag">h3</span>    { <span class="pl-c">/* &#x2717; avoid */</span> }
+  &gt; <span class="hljs-class">.name</span> { <span class="pl-c">/* &#x2713; better */</span> }
+}
+</code></pre>
+</div><div class="footer-nav"><div class="left"><a href="components.html"><span class="title">About components</span></a></div><div class="right"><a href="variants.html"><span class="label">Next: </span><span class="title">Variants</span></a></div></div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a></li><li class="menu-item -level-1 -parent"><span class="title">Components</span><ul class="submenu"><li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a></li><li class="menu-item -level-2"><a href="elements.html" class="link title -active link-elements">Elements</a><ul class="headings heading-list"><li class="heading-item -depth-2"><a href="#naming-elements" class="hlink link-naming-elements">Naming elements</a></li><li class="heading-item -depth-2"><a href="#element-selectors" class="hlink link-element-selectors">Element selectors</a></li><li class="heading-item -depth-2"><a href="#on-multiple-words" class="hlink link-on-multiple-words">On multiple words</a></li><li class="heading-item -depth-2"><a href="#avoid-tag-selectors" class="hlink link-avoid-tag-selectors">Avoid tag selectors</a></li></ul></li><li class="menu-item -level-2"><a href="variants.html" class="link title  link-variants">Variants</a></li><li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a></li><li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a></li><li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Structure</span><ul class="submenu"><li class="menu-item -level-2"><a href="css-structure.html" class="link title  link-css-structure">CSS Structure</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Notes</span><ul class="submenu"><li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a></li><li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a></li><li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a></li></ul></li><li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=09ab6609"></script></body></html>
