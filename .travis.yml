@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- "4"
+install:
+- npm install docpress/docpress
+script:
+- ./node_modules/.bin/docpress build
+after_success:
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm install git-update-ghpages && ./node_modules/.bin/git-update-ghpages -e; fi
+cache:
+  directories:
+  - node_modules
+env:
+  global:
+  - GIT_NAME: Travis CI
+  - GIT_EMAIL: nobody@nobody.org
+  - GITHUB_REPO: rstacruz/onmount
+  - GIT_SOURCE: _docpress
