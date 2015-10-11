@@ -1,0 +1,335 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=c86c2f30"><title>rscss</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-index"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="rscss">RSCSS</h1>
+<p>Reasonable System for CSS Stylesheet Structure.</p>
+<br>
+<h2 id="introduction">Introduction</h2>
+<p>Any CSS greater than 1000 lines will get unwieldy. You&apos;ll eventually run into these common pitfalls:</p>
+<ul>
+<li>&quot;What does this class mean?&quot;</li>
+<li>&quot;Is this class still being used?&quot;</li>
+<li>&quot;If I make a new class <code>green</code>, will there be a clash?&quot;</li>
+</ul>
+<p><strong>rscss</strong> is an attempt to make sense of all these. It is not a framework. It&apos;s simply a set of ideas to guide your process of building maintainable CSS for any modern website or application.</p>
+<br>
+<h2 id="components">Components</h2>
+<p><img src="docs/images/component-example.png" alt=""></p>
+<p>Think in components. Consider of each piece of your UI as an individual &quot;component.&quot;</p>
+<h3 id="naming-components">Naming components</h3>
+<p>Components will be named with <strong>at least two words</strong>, separated by a dash. Examples of a component:</p>
+<ul>
+<li>A like button (<code>.like-button</code>)</li>
+<li>A search form (<code>.search-form</code>)</li>
+<li>A news article card (<code>.article-card</code>)</li>
+</ul>
+<br>
+<h2 id="elements">Elements</h2>
+<p><img src="docs/images/component-elements.png" alt=""></p>
+<p>Elements are things inside your component.</p>
+<h3 id="naming-elements">Naming elements</h3>
+<p>Each component may have elements. They should have classes that are only <strong>one word</strong>.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
+  &gt; <span class="hljs-class">.field</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.action</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="element-selectors">Element selectors</h3>
+<p>Prefer to use the <code>&gt;</code> child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
+  <span class="hljs-class">.title</span>     { <span class="pl-c">/* okay */</span> }
+  &gt; <span class="hljs-class">.author</span>  { <span class="pl-c">/* &#x2713; better */</span> }
+}
+</code></pre>
+<h3 id="on-multiple-words">On multiple words</h3>
+<p>For those that need two or more words, concatenate them without dashes or underscores.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.profile-box</span> {
+  &gt; <span class="hljs-class">.firstname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.lastname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.avatar</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="avoid-tag-selectors">Avoid tag selectors</h3>
+<p>Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
+  &gt; <span class="hljs-tag">h3</span>    { <span class="pl-c">/* &#x2717; avoid */</span> }
+  &gt; <span class="hljs-class">.name</span> { <span class="pl-c">/* &#x2713; better */</span> }
+}
+</code></pre>
+<br>
+<h2 id="variants">Variants</h2>
+<p><img src="docs/images/component-modifiers.png" alt=""></p>
+<p>Components may have variants. Elements may have variants, too.</p>
+<br>
+<h3 id="naming-variants">Naming variants</h3>
+<p>Classnames for variants will be prefixed by a dash (<code>-</code>).</p>
+<pre><code class="lang-scss"><span class="hljs-class">.like-button</span> {
+  &amp;<span class="hljs-class">.-wide</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-class">.-short</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-class">.-disabled</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="element-variants">Element variants</h3>
+<p>Elements may also have variants.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.shopping-card</span> {
+  &gt; <span class="hljs-class">.title</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.title</span><span class="hljs-class">.-small</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="dash-prefixes">Dash prefixes</h3>
+<p>Dashes are the preferred prefix for variants.</p>
+<ul>
+<li>It prevents ambiguity with elements.</li>
+<li>a CSS class can only start with a letter, <code>_</code> or <code>-</code>.</li>
+<li>dashes are easier to type than underscores.</li>
+<li>it kind of resembles switches in UNIX commands (<code>gcc -O2 -Wall -emit-last</code>)</li>
+</ul>
+<br>
+<h2 id="nested-components">Nested components</h2>
+<p><img src="docs/images/component-nesting.png" alt=""></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;meta&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<p>Sometimes it&apos;s necessary to nest components. Here are some guidelines for doing that.</p>
+<br>
+<h3 id="variants-of-nested-components">Variants of nested components</h3>
+<p>A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.</p>
+<pre><code class="lang-scss"><span class="hljs-class">.article-header</span> {
+  &gt; <span class="hljs-class">.vote-box</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* &#x2717; avoid this */</span> }
+}
+</code></pre>
+<p>Instead, prefer to add a variant to the nested component and apply it from the containing component.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-header&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box -highlight&apos;</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-scss"><span class="hljs-class">.vote-box</span> {
+  &amp;<span class="hljs-class">.-highlight</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="simplifying-nested-components">Simplifying nested components</h3>
+<p>Sometimes, when nesting components, your markup can get dirty:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-button -red -large&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<p>You can simplify this by using your CSS preprocessor&apos;s <code>@extend</code> mechanism:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;submit&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
+  &gt; <span class="hljs-class">.submit</span> {
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button</span>;</span>
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-red</span>;</span>
+    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-large</span>;</span>
+  }
+}
+</code></pre>
+<br>
+<h2 id="layout">Layout</h2>
+<p><img src="docs/images/layouts.png" alt=""></p>
+<h3 id="avoid-positioning-properties">Avoid positioning properties</h3>
+<p>Components should be made in a way that they&apos;re reusable in different contexts. Avoid putting these properties in components:</p>
+<ul>
+<li>Positioning (<code>position</code>, <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>)</li>
+<li>Floats (<code>float</code>, <code>clear</code>)</li>
+<li>Margins (<code>margin</code>)</li>
+<li>Dimensions (<code>width</code>, <code>height</code>) *</li>
+</ul>
+<h3 id="fixed-dimensions">Fixed dimensions</h3>
+<p>Exception to these would be elements that have fixed width/heights, such as avatars and logos.</p>
+<h3 id="define-positioning-in-parents">Define positioning in parents</h3>
+<p>If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the <em>list</em> component, not the component itself.</p>
+<pre><code class="lang-css">.article-list {
+  &amp; {
+    @include clearfix;
+  }
+
+  &gt; .article-card {
+    width: 33.3%;
+    float: left;
+  }
+}
+
+.article-card {
+  &amp; { /* ... */ }
+  &gt; .image { /* ... */ }
+  &gt; .title { /* ... */ }
+  &gt; .category { /* ... */ }
+}
+</code></pre>
+<br>
+<h2 id="helpers">Helpers</h2>
+<pre><code class="lang-css"><span class="hljs-class">._unmargin</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">margin</span>:<span class="pl-s"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>; }</span>
+<span class="hljs-class">._center</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">text-align</span>:<span class="pl-s"> center <span class="hljs-important">!important</span></span></span>; }</span>
+<span class="hljs-class">._pull-left</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">float</span>:<span class="pl-s"> left <span class="hljs-important">!important</span></span></span>; }</span>
+<span class="hljs-class">._pull-right</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">float</span>:<span class="pl-s"> right <span class="hljs-important">!important</span></span></span>; }</span>
+</code></pre>
+<p>For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with <em>!important</em>. Use them <em>very</em> sparingly.</p>
+<h3 id="naming-helpers">Naming helpers</h3>
+<p>Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;order-graphs -slim _unmargin&apos;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+</code></pre>
+<h3 id="organizing-helpers">Organizing helpers</h3>
+<p>Place all helpers in one file called <code>helpers</code>. While you can separate them into multiple files, it&apos;s very preferrable to keep your number of helpers to a minimum.</p>
+<br>
+<h2 id="css-structure">CSS structure</h2>
+<h3 id="one-component-per-file">One component per file</h3>
+<p>For each component, place them in their own file.</p>
+<pre><code class="lang-scss"><span class="pl-c">/* css/components/search-form.scss */</span>
+<span class="hljs-class">.search-form</span> {
+  &gt; <span class="hljs-class">.button</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.field</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.label</span> { <span class="pl-c">/* ... */</span> }
+
+  <span class="pl-c">// variants</span>
+  &amp;<span class="hljs-class">.-small</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-class">.-wide</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<h3 id="use-glob-matching">Use glob matching</h3>
+<p>In sass-rails and stylus, this makes including all of them easy:</p>
+<pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="pl-k">import</span> <span class="pl-s">&apos;components/*&apos;</span>;</span>
+</code></pre>
+<h3 id="avoid-over-nesting">Avoid over-nesting</h3>
+<p>Use no more than 1 level of nesting. It&apos;s easy to get lost with too much nesting.</p>
+<pre><code class="lang-scss"><span class="pl-c">/* &#x2717; Avoid: 3 levels of nesting */</span>
+<span class="hljs-class">.image-frame</span> {
+  &gt; <span class="hljs-class">.description</span> {
+    <span class="pl-c">/* ... */</span>
+
+    &gt; <span class="hljs-class">.icon</span> {
+      <span class="pl-c">/* ... */</span>
+    }
+  }
+}
+
+<span class="pl-c">/* &#x2713; Better: 2 levels */</span>
+<span class="hljs-class">.image-frame</span> {
+  &gt; <span class="hljs-class">.description</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.description</span> &gt; <span class="hljs-class">.icon</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<br>
+<h2 id="pitfalls">Pitfalls</h2>
+<h3 id="bleeding-through-nested-components">Bleeding through nested components</h3>
+<p>Be careful about nested components where the nested component has an element of the same name.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">article</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;up&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;down&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="pl-ent">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>Article title<span class="hljs-tag">&lt;/<span class="pl-ent">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>3 votes<span class="hljs-tag">&lt;/<span class="pl-ent">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">article</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-scss"><span class="hljs-class">.article-link</span> {
+  &gt; <span class="hljs-class">.title</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.count</span> { <span class="pl-c">/* ... (!!!) */</span> }
+}
+
+<span class="hljs-class">.vote-box</span> {
+  &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.down</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-class">.count</span> { <span class="pl-c">/* ... */</span> }
+}
+</code></pre>
+<p>In this case, if <code>.article-link &gt; .count</code> did not have the <code>&gt;</code> (child) selector, it will also apply to the <code>.vote-box .count</code> element. This is one of the reasons why child selectors are preferred.</p>
+<br>
+<h2 id="apprehensions">Apprehensions</h2>
+<p>Some people may have apprehensions to these convention, such as:</p>
+<ul>
+<li>
+<p><strong>But dashes suck:</strong>
+You&apos;re free to omit it and just use regular words, but keep the rest of the ideas in place (components, elements, variants).</p>
+</li>
+<li>
+<p><strong>But I can&apos;t think of 2 words:</strong>
+Some components will only need one word to express their purpose, such as <code>alert</code>. In these cases, consider that using some suffixes will make it clearer that it&apos;s a block-level element:</p>
+<ul>
+<li><code>.alert-box</code></li>
+<li><code>.alert-card</code></li>
+<li><code>.alert-block</code></li>
+</ul>
+<p>Or for inlines:</p>
+<ul>
+<li><code>.link-button</code></li>
+<li><code>.link-span</code></li>
+</ul>
+</li>
+</ul>
+<br>
+<h2 id="other-resources">Other resources</h2>
+<ul>
+<li><a href="https://speakerdeck.com/dafed/managing-css-projects-with-itcss#49">ITCSS</a> (&quot;Inverted Triangle CSS&quot;) is a nice complement to any rscss structure.</li>
+</ul>
+<br>
+<h2 id="other-solutions">Other solutions</h2>
+<h3 id="bem">BEM</h3>
+<p><a href="http://bem.info/">BEM</a> in nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.</p>
+<pre><code class="lang-html"><span class="pl-c">&lt;!-- BEM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="pl-ent">form</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;site-search site-search--full&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span>  <span class="pl-e">class</span>=<span class="pl-s">&apos;site-search__field&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;site-search__button&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">form</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="pl-c">&lt;!-- rscss --&gt;</span>
+<span class="hljs-tag">&lt;<span class="pl-ent">form</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;site-search -full&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">input</span>  <span class="pl-e">class</span>=<span class="pl-s">&apos;field&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;button&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="pl-ent">form</span>&gt;</span>
+</code></pre>
+<h3 id="terminologies">Terminologies</h3>
+<p>The same concepts exist in similar ways in other CSS structuring ideologies.</p>
+<table>
+<thead>
+<tr>
+<th>RSCSS</th>
+<th>BEM</th>
+<th>SMACSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td>Block</td>
+<td>Module</td>
+</tr>
+<tr>
+<td>Element</td>
+<td>Element</td>
+<td>Sub-Component</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>?</td>
+<td>Layout</td>
+</tr>
+<tr>
+<td>Variant</td>
+<td>Modifier</td>
+<td>Sub-Module &amp; State</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Think in <strong>components</strong>, named with 2 words (<code>.screenshot-image</code>)</li>
+<li>Components have <strong>elements</strong>, named with 1 word (<code>.blog-post .title</code>)</li>
+<li>Name <strong>variants</strong> with a dash prefix (<code>.shop-banner.-with-icon</code>)</li>
+<li>Components can nest</li>
+<li>Remember you can extend to make things simple</li>
+</ul>
+</div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title -active link-index">rscss</a></li><li class="menu-item -level-1"><a href="#introduction" class="link title link-introduction">Introduction</a></li><li class="menu-item -level-1 -parent"><a href="#components" class="link title link-components">Components</a><ul class="submenu"><li class="menu-item -level-2"><a href="#naming-components" class="link title link-naming-components">Naming components</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#elements" class="link title link-elements">Elements</a><ul class="submenu"><li class="menu-item -level-2"><a href="#naming-elements" class="link title link-naming-elements">Naming elements</a></li><li class="menu-item -level-2"><a href="#element-selectors" class="link title link-element-selectors">Element selectors</a></li><li class="menu-item -level-2"><a href="#on-multiple-words" class="link title link-on-multiple-words">On multiple words</a></li><li class="menu-item -level-2"><a href="#avoid-tag-selectors" class="link title link-avoid-tag-selectors">Avoid tag selectors</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#variants" class="link title link-variants">Variants</a><ul class="submenu"><li class="menu-item -level-2"><a href="#naming-variants" class="link title link-naming-variants">Naming variants</a></li><li class="menu-item -level-2"><a href="#element-variants" class="link title link-element-variants">Element variants</a></li><li class="menu-item -level-2"><a href="#dash-prefixes" class="link title link-dash-prefixes">Dash prefixes</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#nested-components" class="link title link-nested-components">Nested components</a><ul class="submenu"><li class="menu-item -level-2"><a href="#variants-of-nested-components" class="link title link-variants-of-nested-components">Variants of nested components</a></li><li class="menu-item -level-2"><a href="#simplifying-nested-components" class="link title link-simplifying-nested-components">Simplifying nested components</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#layout" class="link title link-layout">Layout</a><ul class="submenu"><li class="menu-item -level-2"><a href="#avoid-positioning-properties" class="link title link-avoid-positioning-properties">Avoid positioning properties</a></li><li class="menu-item -level-2"><a href="#fixed-dimensions" class="link title link-fixed-dimensions">Fixed dimensions</a></li><li class="menu-item -level-2"><a href="#define-positioning-in-parents" class="link title link-define-positioning-in-parents">Define positioning in parents</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#helpers" class="link title link-helpers">Helpers</a><ul class="submenu"><li class="menu-item -level-2"><a href="#naming-helpers" class="link title link-naming-helpers">Naming helpers</a></li><li class="menu-item -level-2"><a href="#organizing-helpers" class="link title link-organizing-helpers">Organizing helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#css-structure" class="link title link-css-structure">CSS structure</a><ul class="submenu"><li class="menu-item -level-2"><a href="#one-component-per-file" class="link title link-one-component-per-file">One component per file</a></li><li class="menu-item -level-2"><a href="#use-glob-matching" class="link title link-use-glob-matching">Use glob matching</a></li><li class="menu-item -level-2"><a href="#avoid-over-nesting" class="link title link-avoid-over-nesting">Avoid over-nesting</a></li></ul></li><li class="menu-item -level-1 -parent"><a href="#pitfalls" class="link title link-pitfalls">Pitfalls</a><ul class="submenu"><li class="menu-item -level-2"><a href="#bleeding-through-nested-components" class="link title link-bleeding-through-nested-components">Bleeding through nested components</a></li></ul></li><li class="menu-item -level-1"><a href="#apprehensions" class="link title link-apprehensions">Apprehensions</a></li><li class="menu-item -level-1"><a href="#other-resources" class="link title link-other-resources">Other resources</a></li><li class="menu-item -level-1 -parent"><a href="#other-solutions" class="link title link-other-solutions">Other solutions</a><ul class="submenu"><li class="menu-item -level-2"><a href="#bem" class="link title link-bem">BEM</a></li><li class="menu-item -level-2"><a href="#terminologies" class="link title link-terminologies">Terminologies</a></li></ul></li><li class="menu-item -level-1"><a href="#summary" class="link title link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=433c34e7"></script></body></html>
