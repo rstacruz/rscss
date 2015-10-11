@@ -1,8 +1,8 @@
 # Elements
 
-![](images/component-elements.png)
-
 Elements are things inside your component.
+
+![](images/component-elements.png)
 
 ## Naming elements
 Each component may have elements. They should have classes that are only **one word**.

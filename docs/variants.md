@@ -1,8 +1,8 @@
 # Variants
 
-![](images/component-modifiers.png)
-
 Components may have variants. Elements may have variants, too.
+
+![](images/component-modifiers.png)
 
 <br>
 

@@ -24,7 +24,8 @@ Other solutions
 </form>
 ```
 
-### Terminologies
+## Terminologies
+
 The same concepts exist in similar ways in other CSS structuring ideologies.
 
 | RSCSS     | BEM      | SMACSS        |
