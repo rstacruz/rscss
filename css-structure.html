@@ -1,4 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css?t=f78118d4"><title>CSS Structure</title></head><body class="-menu-visible"><div class="doc-layout"><div class="toggle menu-toggle js-menu-toggle"></div><div class="body page-css-structure"><div class="header-nav"><div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink"><!-- span.title Open in GitHub--><span class="icon -github"></span></a></div></div><div class="markdown-body"><h1 id="css-structure">CSS structure</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=f78118d4">
+    <title>CSS Structure</title>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="body page-css-structure">
+        <div class="header-nav">
+          <div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="css-structure">CSS structure</h1>
 <h2 id="one-component-per-file">One component per file</h2>
 <p>For each component, place them in their own file.</p>
 <pre><code class="lang-scss"><span class="pl-c">/* css/components/search-form.scss */</span>
@@ -35,4 +51,64 @@
   &gt; <span class="hljs-class">.description</span> &gt; <span class="hljs-class">.icon</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
-</div><div class="footer-nav"><div class="left"><a href="helpers.html"><span class="title">Helpers</span></a></div><div class="right"><a href="pitfalls.html"><span class="label">Next: </span><span class="title">Pitfalls</span></a></div></div></div><div class="menu toc-menu"><li class="menu-item -level-0 -parent"><ul class="submenu"><li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a></li><li class="menu-item -level-1 -parent"><span class="title">Components</span><ul class="submenu"><li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a></li><li class="menu-item -level-2"><a href="elements.html" class="link title  link-elements">Elements</a></li><li class="menu-item -level-2"><a href="variants.html" class="link title  link-variants">Variants</a></li><li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a></li><li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a></li><li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Structure</span><ul class="submenu"><li class="menu-item -level-2"><a href="css-structure.html" class="link title -active link-css-structure">CSS Structure</a><ul class="headings heading-list"><li class="heading-item -depth-2"><a href="#one-component-per-file" class="hlink link-one-component-per-file">One component per file</a></li><li class="heading-item -depth-2"><a href="#use-glob-matching" class="hlink link-use-glob-matching">Use glob matching</a></li><li class="heading-item -depth-2"><a href="#avoid-over-nesting" class="hlink link-avoid-over-nesting">Avoid over-nesting</a></li></ul></li></ul></li><li class="menu-item -level-1 -parent"><span class="title">Notes</span><ul class="submenu"><li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a></li><li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a></li><li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a></li></ul></li><li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a></li></ul></li></div></div><script src="assets/script.js?t=de0b4e6d"></script></body></html>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="helpers.html"><span class="title">Helpers</span></a></div>
+          <div class="right"><a href="pitfalls.html"><span class="label">Next: </span><span class="title">Pitfalls</span></a></div>
+        </div>
+      </div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a href="index.html" class="link title  link-index">rscss</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Components</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a href="components.html" class="link title  link-components">About components</a>
+                </li>
+                <li class="menu-item -level-2"><a href="elements.html" class="link title  link-elements">Elements</a>
+                </li>
+                <li class="menu-item -level-2"><a href="variants.html" class="link title  link-variants">Variants</a>
+                </li>
+                <li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a>
+                </li>
+                <li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a>
+                </li>
+                <li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Structure</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a href="css-structure.html" class="link title -active link-css-structure">CSS Structure</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a href="#one-component-per-file" class="hlink link-one-component-per-file">One component per file</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a href="#use-glob-matching" class="hlink link-use-glob-matching">Use glob matching</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a href="#avoid-over-nesting" class="hlink link-avoid-over-nesting">Avoid over-nesting</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Notes</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a href="pitfalls.html" class="link title  link-pitfalls">Pitfalls</a>
+                </li>
+                <li class="menu-item -level-2"><a href="apprehensions.html" class="link title  link-apprehensions">Apprehensions</a>
+                </li>
+                <li class="menu-item -level-2"><a href="other-resources.html" class="link title  link-other-resources">Other resources</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a href="summary.html" class="link title  link-summary">Summary</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+    </div>
+    <script src="assets/script.js?t=de0b4e6d"></script>
+  </body>
+</html>
