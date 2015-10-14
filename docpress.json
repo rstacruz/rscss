@@ -1,3 +1,8 @@
 {
-  "github": "rstacruz/rscss"
+  "github": "rstacruz/rscss",
+  "markdown": {
+    "plugins": {
+      "decorate": {}
+    }
+  }
 }
