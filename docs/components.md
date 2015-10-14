@@ -11,3 +11,7 @@ Components will be named with **at least two words**, separated by a dash. Examp
   * A like button (`.like-button`)
   * A search form (`.search-form`)
   * A news article card (`.article-card`)
+
+How do you write a compnent exactly? Let's learn about Elements.
+[Continue →](elements.md)
+<!-- {p:.pull-box} -->
