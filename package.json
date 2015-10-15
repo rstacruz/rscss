@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/rstacruz/rscss#readme",
   "devDependencies": {
-    "docpress": "0.4.2",
+    "docpress": "0.5.4",
     "git-update-ghpages": "1.2.0",
     "markdown-it-decorate": "1.0.0"
   }
