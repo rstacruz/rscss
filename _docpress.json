@@ -440,7 +440,6 @@
     "docs/other-resources.md": "other-resources.html",
     "docs/summary.md": "summary.html",
     "docs/docpress.json": "docpress.json",
-    "docs/assets/custom.scss": "assets/custom.scss",
     "docs/images/component-elements.png": "images/component-elements.png",
     "docs/images/component-example.png": "images/component-example.png",
     "docs/images/component-modifiers.png": "images/component-modifiers.png",
