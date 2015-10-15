@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "true"
+    "test": "true",
+    "deploy": "docpress b && git-update-ghpages rstacruz/rscss _docpress"
   },
   "repository": {
     "type": "git",
