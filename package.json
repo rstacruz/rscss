@@ -1,0 +1,27 @@
+{
+  "name": "rscss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/rscss.git"
+  },
+  "author": "Rico Sta. Cruz <rico@ricostacruz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rstacruz/rscss/issues"
+  },
+  "homepage": "https://github.com/rstacruz/rscss#readme",
+  "devDependencies": {
+    "docpress": "0.4.2",
+    "git-update-ghpages": "1.2.0",
+    "markdown-it-decorate": "1.0.0"
+  }
+}
