@@ -44,3 +44,7 @@ Use classnames whenever possible. Tag selectors are fine, but they may come at a
   > .name { /* ✓ better */ }
 }
 ```
+
+Not all elements should always look the same. Variants can help.
+[Continue →](variants.md)
+<!-- {p:.pull-box} -->

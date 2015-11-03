@@ -37,3 +37,7 @@ If you need to define these, try to define them in whatever context whey will be
     > .category { /* ... */ }
   }
   ```
+
+How do you apply margins outside a layout? Try it with Helpers.
+[Continue →](helpers.md)
+<!-- {p:.pull-box} -->

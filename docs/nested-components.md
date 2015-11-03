@@ -68,3 +68,7 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
   }
 }
 ```
+
+What about repeating elements like lists? Learn about Layouts.
+[Continue →](layouts.md)
+<!-- {p:.pull-box} -->
