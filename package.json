@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "true",
-    "deploy": "docpress b && git-update-ghpages rstacruz/rscss _docpress"
+    "deploy": "docpress b && git-update-ghpages --keep rstacruz/rscss _docpress"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/rstacruz/rscss#readme",
   "devDependencies": {
     "docpress": "0.5.4",
-    "git-update-ghpages": "1.2.0",
+    "git-update-ghpages": "1.3.0",
     "markdown-it-decorate": "1.0.0"
   }
 }
