@@ -1,3 +1,10 @@
+> Viewing this from GitHub? Visit the website for the full experience.<br>
+> [rscss.io →](http://rscss.io)
+<!-- {blockquote: style='display:none'} -->
+
+----
+<!-- {hr: style='display:none'} -->
+
 # rscss
 
 <!-- {h1:.massive-header.-with-tagline} -->
@@ -6,11 +13,6 @@
 
 Reasonable System for CSS Stylesheet Structure.<br>
 A set of simple ideas to guide your process of building maintainable CSS.
-
-> #### Hello there
-> Viewing this from GitHub? Visit the website for the full experience.<br>
-> [rscss.io →](http://rscss.io)
-<!-- {blockquote: style='display:none'} -->
 
 Introduction
 ------------
