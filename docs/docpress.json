@@ -1,3 +1,11 @@
 {
-  "github": "rstacruz/rscss"
+  "github": "rstacruz/rscss",
+  "css": [
+    "http://ricostacruz.com/docpress-rsc/style.css"
+  ],
+  "markdown": {
+    "plugins": {
+      "decorate": {}
+    }
+  }
 }
