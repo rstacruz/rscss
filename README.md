@@ -1,5 +1,5 @@
-> Viewing this from GitHub? Visit the website for the full experience. **[rscss.io →](http://rscss.io)**
-<!-- {blockquote: style='display:none'} -->
+##### Viewing this from GitHub? Visit the website for the full experience. **[rscss.io →](http://rscss.io)**
+<!-- {h5: style='display:none'} -->
 
 ----
 <!-- {hr: style='display:none'} -->
