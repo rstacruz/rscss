@@ -16,7 +16,7 @@ Exception to these would be elements that have fixed width/heights, such as avat
 
 ## Define positioning in parents
 
-If you need to define these, try to define them in whatever context whey will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
+If you need to define these, try to define them in whatever context they will be in. In this example below, notice that the widths and floats are applied on the *list* component, not the component itself.
 
   ```css
   .article-list {
