@@ -1,5 +1,4 @@
-> Viewing this from GitHub? Visit the website for the full experience.<br>
-> [rscss.io →](http://rscss.io)
+> Viewing this from GitHub? Visit the website for the full experience. [rscss.io →](http://rscss.io)
 <!-- {blockquote: style='display:none'} -->
 
 ----
