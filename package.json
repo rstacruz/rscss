@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "true",
-    "deploy": "docpress b && git-update-ghpages --keep rstacruz/rscss _docpress"
+    "build": "docpress b",
+    "deploy": "git-update-ghpages -e --keep rstacruz/rscss _docpress"
   },
   "repository": {
     "type": "git",
