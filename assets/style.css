@@ -433,7 +433,6 @@ th {
   -ms-text-size-adjust: 100%;
       text-size-adjust: 100%;
   color: #333;
-  overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -653,13 +652,9 @@ th {
 }
 
 .markdown-body .anchor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  padding-right: 6px;
-  padding-left: 30px;
-  margin-left: -30px;
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
 }
 
 .markdown-body .anchor:focus {
@@ -672,7 +667,6 @@ th {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  position: relative;
   margin-top: 1em;
   margin-bottom: 16px;
   font-weight: bold;
@@ -685,9 +679,9 @@ th {
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
-  display: none;
   color: #000;
   vertical-align: middle;
+  visibility: hidden;
 }
 
 .markdown-body h1:hover .anchor,
@@ -696,8 +690,6 @@ th {
 .markdown-body h4:hover .anchor,
 .markdown-body h5:hover .anchor,
 .markdown-body h6:hover .anchor {
-  padding-left: 8px;
-  margin-left: -30px;
   text-decoration: none;
 }
 
@@ -707,7 +699,7 @@ th {
 .markdown-body h4:hover .anchor .octicon-link,
 .markdown-body h5:hover .anchor .octicon-link,
 .markdown-body h6:hover .anchor .octicon-link {
-  display: inline-block;
+  visibility: visible;
 }
 
 .markdown-body h1 {
@@ -862,7 +854,8 @@ th {
 
 .markdown-body img {
   max-width: 100%;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  background-color: #fff;
 }
 
 .markdown-body code {
@@ -1056,6 +1049,17 @@ th {
   border-bottom-color: #bbb;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
 }
 
 .markdown-body .task-list-item {
@@ -1331,26 +1335,23 @@ ul.heading-list .hlink:before {
   border-left-color: #4078c0;
 }
 .menu-toggle {
-  $size: 40px;
-}
-.menu-toggle {
   display: none;
+  box-sizing: content-box;
 }
 @media (min-width: 769px) {
   .menu-toggle {
     display: block;
-    width: $size12px;
-    height: $size12px;
-    line-height: $size;
+    width: 52px;
+    height: 52px;
+    line-height: 40px;
     position: fixed;
     padding-left: 12px;
     left: 0;
     bottom: 0;
     color: #111;
-    border-radius: 3px;
     z-index: 10;
     cursor: pointer;
-    background-color: transparent;
+    background: transparent;
   }
 }
 .menu-toggle {
@@ -1368,7 +1369,7 @@ ul.heading-list .hlink:before {
   content: "\f20e";
   font-size: 24px;
   text-align: center;
-  width: $size;
+  width: 40px;
 }
 .menu-toggle:hover {
   color: #4078c0;
