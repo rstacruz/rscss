@@ -6,7 +6,7 @@ Other solutions
 ---------------
 
 ### BEM
-[BEM] in nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.
+[BEM] is nice, but some may be irked at its unconventional syntax. RSCSS pretty much follows BEM conventions, only with a different syntax.
 
 ```html
 <!-- BEM -->
