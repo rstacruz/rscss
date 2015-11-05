@@ -1,10 +1,10 @@
 # Apprehensions
 
-Some people may have apprehensions to these convention, such as:
+Some people may have apprehensions to these conventions, such as:
 
 #### "But dashes suck"
 
-You're free to omit it and just use regular words, but keep the rest of the ideas in place (components, elements, variants).
+You're free to omit them and just use regular words, but keep the rest of the ideas in place (components, elements, variants).
 
 #### "But I can't think of 2 words!"
 

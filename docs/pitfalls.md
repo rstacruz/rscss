@@ -1,7 +1,7 @@
 # Pitfalls
 
 ## Bleeding through nested components
-Be careful about nested components where the nested component has an element of the same name.
+Be careful about nested components with elements sharing the same name as elements in its container.
 
 ```html
 <article class='article-link'>
