@@ -1202,7 +1202,7 @@ html {
   box-shadow: inset -1px 0 rgba(17,17,17,0.1);
   font-size: 13px;
   -webkit-transition: opacity 1500ms linear;
-          transition: opacity 1500ms linear;
+  transition: opacity 1500ms linear;
 }
 .toc-menu ul,
 .toc-menu li {
@@ -1237,7 +1237,7 @@ html {
 .toc-menu .link,
 .toc-menu .hlink {
   -webkit-transition: background-color 200ms linear, color 500ms linear, box-shadow 200ms linear;
-          transition: background-color 200ms linear, color 500ms linear, box-shadow 200ms linear;
+  transition: background-color 200ms linear, color 500ms linear, box-shadow 200ms linear;
   box-shadow: inset -2px 0 rgba(64,120,192,0);
   box-sizing: content-box;
 }
@@ -1246,20 +1246,20 @@ html {
   background-color: rgba(64,120,192,0.02);
   color: #404a56;
   -webkit-transition: box-shadow 200ms linear;
-          transition: box-shadow 200ms linear;
+  transition: box-shadow 200ms linear;
 }
 .toc-menu .link:active,
 .toc-menu .hlink:active {
   background-color: rgba(64,120,192,0.1);
   color: #111;
   -webkit-transition: box-shadow 200ms linear;
-          transition: box-shadow 200ms linear;
+  transition: box-shadow 200ms linear;
 }
 .toc-menu .link.-active,
 .toc-menu .hlink.-active {
   box-shadow: inset -2px 0 #4078c0;
   -webkit-transition: background-color 200ms linear, color 500ms linear;
-          transition: background-color 200ms linear, color 500ms linear;
+  transition: background-color 200ms linear, color 500ms linear;
 }
 .toc-menu .-level-1:first-child {
   margin-bottom: 16px;
@@ -1305,12 +1305,12 @@ ul.heading-list .hlink:before {
 .toc-menu.-faded .title:not(.-active) {
   opacity: 0.2;
   -webkit-transition: opacity 1500ms linear;
-          transition: opacity 1500ms linear;
+  transition: opacity 1500ms linear;
 }
 .toc-menu.-faded:hover .title {
   opacity: 1;
   -webkit-transition: opacity 200ms linear;
-          transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
 }
 .markdown-body {
   margin: 0 auto;
@@ -1356,13 +1356,13 @@ ul.heading-list .hlink:before {
 }
 .menu-toggle {
   -webkit-transition: width 1ms linear 250ms, background-color 1ms linear 250ms, color 400ms linear;
-          transition: width 1ms linear 250ms, background-color 1ms linear 250ms, color 400ms linear;
+  transition: width 1ms linear 250ms, background-color 1ms linear 250ms, color 400ms linear;
 }
 .-menu-visible .menu-toggle {
   width: 229px;
   background-color: #fff;
   -webkit-transition: color 400ms linear;
-          transition: color 400ms linear;
+  transition: color 400ms linear;
 }
 .menu-toggle:before {
   display: inline-block;
@@ -1387,7 +1387,7 @@ ul.heading-list .hlink:before {
   top: 16px;
   color: #505d6b;
   -webkit-transition: color 400ms linear;
-          transition: color 400ms linear;
+  transition: color 400ms linear;
   border-radius: 3px;
   z-index: 10;
   cursor: pointer;
@@ -1408,7 +1408,7 @@ ul.heading-list .hlink:before {
 .header-nav {
   opacity: 0;
   -webkit-transition: opacity 250ms linear;
-          transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
   pointer-events: none;
 }
 .header-nav.-expanded {
@@ -1435,7 +1435,7 @@ ul.heading-list .hlink:before {
   line-height: 1em;
   color: rgba(80,93,107,0.75);
   -webkit-transition: all 150ms linear;
-          transition: all 150ms linear;
+  transition: all 150ms linear;
   padding: 24px;
 }
 .header-nav .iconlink:hover {
@@ -1472,7 +1472,9 @@ ul.heading-list .hlink:before {
   pointer-events: none;
   opacity: 0;
   -webkit-transition: opacity 150ms linear, -webkit-transform 150ms linear;
-          transition: opacity 150ms linear, transform 150ms linear;
+  transition: opacity 150ms linear, -webkit-transform 150ms linear;
+  transition: opacity 150ms linear, transform 150ms linear;
+  transition: opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear;
   -webkit-transform: translate3d(0, -8px, 0);
           transform: translate3d(0, -8px, 0);
 }
@@ -1491,7 +1493,7 @@ ul.heading-list .hlink:before {
 .header-nav .icon {
   color: rgba(80,93,107,0.5);
   -webkit-transition: color 150ms linear;
-          transition: color 150ms linear;
+  transition: color 150ms linear;
 }
 .header-nav.-expanded .icon {
   color: #111;
@@ -1567,7 +1569,7 @@ ul.heading-list .hlink:before {
 .footer-nav a:before,
 .footer-nav a:after {
   -webkit-transition: all 250ms ease-in;
-          transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 .footer-nav.-expanded .title,
 .footer-nav.-expanded .label {
@@ -1625,19 +1627,19 @@ ul.heading-list .hlink:before {
     padding-top: 64px;
     padding-bottom: 128px;
     -webkit-transition: all 250ms ease-in;
-            transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
   }
   .doc-layout .menu {
     display: block;
     -webkit-transform: translate3d(-250px, 0, 0);
             transform: translate3d(-250px, 0, 0);
     -webkit-transition: all 250ms ease-in;
-            transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
   }
   .doc-layout .header-nav,
   .doc-layout .footer-nav {
     -webkit-transition: all 250ms ease-in;
-            transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
     left: 64px;
   }
   .-menu-visible .doc-layout .header-nav,
