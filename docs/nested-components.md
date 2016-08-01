@@ -4,7 +4,7 @@
 
 ```html
 <div class='article-link'>
-  <div class='vote-box'>
+  <div class='vote vote-box'>
     ...
   </div>
   <h3 class='title'>...</h3>
@@ -23,11 +23,11 @@ A component may need to appear a certain way when nested in another component. A
 }
 ```
 
-  Instead, prefer to add a variant to the nested component and apply it from the containing component.
+Instead, prefer to add a variant to the nested component and apply it from the containing component.
 
 ```html
 <div class='article-header'>
-  <div class='vote-box -highlight'>
+  <div class='vote vote-box -highlight'>
     ...
   </div>
   ...
@@ -38,6 +38,20 @@ A component may need to appear a certain way when nested in another component. A
 .vote-box {
   &.-highlight > .up { /* ... */ }
 }
+```
+
+## Sub-components as elements
+
+To simplify, sub-components can appear as elements inside a parent component. In this example, `profile-info` is an element called `info` on the parent.
+
+This avoids creating styles as nested components (`.profile-card > .profile-info`); simpler-looking selectors are prefered for brevity (`.profile-card > .info`).
+
+```html
+<div class='profile-card'>
+  <div class='info profile-info'>
+    ...
+  </div>
+</div>
 ```
 
 ## Simplifying nested components
