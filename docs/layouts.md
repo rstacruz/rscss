@@ -7,7 +7,6 @@ Components should be made in a way that they're reusable in different contexts. 
 
   * Positioning (`position`, `top`, `left`, `right`, `bottom`)
   * Floats (`float`, `clear`)
-  * Margins (`margin`)
   * Dimensions (`width`, `height`) *
 
 ## Fixed dimensions
