@@ -26,26 +26,26 @@
         <div class="markdown-body"><h1 id="pitfalls">Pitfalls</h1>
 <h2 id="bleeding-through-nested-components">Bleeding through nested components</h2>
 <p>Be careful about nested components with elements sharing the same name as elements in its container.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">article</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
- <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;up&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;down&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="pl-ent">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;up&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;down&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>Article title<span class="hljs-tag">&lt;/<span class="pl-ent">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>3 votes<span class="hljs-tag">&lt;/<span class="pl-ent">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="pl-ent">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>Article title<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;count&apos;</span>&gt;</span>3 votes<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-scss"><span class="hljs-class">.article-link</span> {
-  &gt; <span class="hljs-class">.title</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.count</span> { <span class="pl-c">/* ... (!!!) */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.article-link</span> {
+  &gt; <span class="hljs-selector-class">.title</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.count</span> { <span class="pl-c">/* ... (!!!) */</span> }
 }
 
-<span class="hljs-class">.vote-box</span> {
-  &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.down</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.count</span> { <span class="pl-c">/* ... */</span> }
+<span class="hljs-selector-class">.vote-box</span> {
+  &gt; <span class="hljs-selector-class">.up</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.down</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.count</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 <p>In this case, if <code>.article-link &gt; .count</code> did not have the <code>&gt;</code> (child) selector, it will also apply to the <code>.vote-box .count</code> element. This is one of the reasons why child selectors are preferred.</p>

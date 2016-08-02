@@ -25,51 +25,51 @@
         </div>
         <div class="markdown-body"><h1 id="nested-components">Nested components</h1>
 <p><img src="images/component-nesting.png" alt=""></p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;article-link&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;vote-box&apos;</span>&gt;</span>
     ...
-  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;meta&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="pl-ent">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;title&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;meta&apos;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>Sometimes it&apos;s necessary to nest components. Here are some guidelines for doing that.</p>
 <h2 id="variants">Variants</h2>
 <p>A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.</p>
-<pre><code class="lang-scss"><span class="hljs-class">.article-header</span> {
-  &gt; <span class="hljs-class">.vote-box</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* &#x2717; avoid this */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.article-header</span> {
+  &gt; <span class="hljs-selector-class">.vote-box</span> &gt; <span class="hljs-selector-class">.up</span> { <span class="pl-c">/* &#x2717; avoid this */</span> }
 }
 </code></pre>
 <p>Instead, prefer to add a variant to the nested component and apply it from the containing component.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;article-header&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;vote-box -highlight&apos;</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;article-header&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;vote-box -highlight&apos;</span>&gt;</span>
     ...
-  <span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   ...
-<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-scss"><span class="hljs-class">.vote-box</span> {
-  &amp;<span class="hljs-class">.-highlight</span> &gt; <span class="hljs-class">.up</span> { <span class="pl-c">/* ... */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.vote-box</span> {
+  &amp;<span class="hljs-selector-class">.-highlight</span> &gt; <span class="hljs-selector-class">.up</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 <h2 id="simplifying-nested-components">Simplifying nested components</h2>
 <p>Sometimes, when nesting components, your markup can get dirty:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-button -red -large&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="hljs-attr">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;search-button -red -large&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>You can simplify this by using your CSS preprocessor&apos;s <code>@extend</code> mechanism:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">input</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="pl-e">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;submit&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="pl-ent">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;search-form&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;input&apos;</span> <span class="hljs-attr">type</span>=<span class="pl-s">&apos;text&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;submit&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
-  &gt; <span class="hljs-class">.submit</span> {
-    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button</span>;</span>
-    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-red</span>;</span>
-    <span class="hljs-at_rule">@<span class="pl-k">extend</span><span class="hljs-preprocessor"> .search-button.-large</span>;</span>
+<pre><code class="lang-scss"><span class="hljs-selector-class">.search-form</span> {
+  &gt; <span class="hljs-selector-class">.submit</span> {
+    @<span class="pl-k">extend</span> .search-button;
+    @<span class="pl-k">extend</span> .search-button.-red;
+    @<span class="pl-k">extend</span> .search-button.-large;
   }
 }
 </code></pre>

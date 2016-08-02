@@ -28,31 +28,31 @@
 <p><img src="images/component-elements.png" alt=""></p>
 <h2 id="naming-elements">Naming elements</h2>
 <p>Each component may have elements. They should have classes that are only <strong>one word</strong>.</p>
-<pre><code class="lang-scss"><span class="hljs-class">.search-form</span> {
-  &gt; <span class="hljs-class">.field</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.action</span> { <span class="pl-c">/* ... */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.search-form</span> {
+  &gt; <span class="hljs-selector-class">.field</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.action</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 <h2 id="element-selectors">Element selectors</h2>
 <p>Prefer to use the <code>&gt;</code> child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.</p>
-<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
-  <span class="hljs-class">.title</span>     { <span class="pl-c">/* okay */</span> }
-  &gt; <span class="hljs-class">.author</span>  { <span class="pl-c">/* &#x2713; better */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.article-card</span> {
+  <span class="hljs-selector-class">.title</span>     { <span class="pl-c">/* okay */</span> }
+  &gt; <span class="hljs-selector-class">.author</span>  { <span class="pl-c">/* &#x2713; better */</span> }
 }
 </code></pre>
 <h2 id="on-multiple-words">On multiple words</h2>
 <p>For those that need two or more words, concatenate them without dashes or underscores.</p>
-<pre><code class="lang-scss"><span class="hljs-class">.profile-box</span> {
-  &gt; <span class="hljs-class">.firstname</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.lastname</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.avatar</span> { <span class="pl-c">/* ... */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.profile-box</span> {
+  &gt; <span class="hljs-selector-class">.firstname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.lastname</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.avatar</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 <h2 id="avoid-tag-selectors">Avoid tag selectors</h2>
 <p>Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.</p>
-<pre><code class="lang-scss"><span class="hljs-class">.article-card</span> {
-  &gt; <span class="hljs-tag">h3</span>    { <span class="pl-c">/* &#x2717; avoid */</span> }
-  &gt; <span class="hljs-class">.name</span> { <span class="pl-c">/* &#x2713; better */</span> }
+<pre><code class="lang-scss"><span class="hljs-selector-class">.article-card</span> {
+  &gt; <span class="hljs-selector-tag">h3</span>    { <span class="pl-c">/* &#x2717; avoid */</span> }
+  &gt; <span class="hljs-selector-class">.name</span> { <span class="pl-c">/* &#x2713; better */</span> }
 }
 </code></pre>
 <p class="pull-box">Not all elements should always look the same. Variants can help.

@@ -27,37 +27,37 @@
 <h2 id="one-component-per-file">One component per file</h2>
 <p>For each component, place them in their own file.</p>
 <pre><code class="lang-scss"><span class="pl-c">/* css/components/search-form.scss */</span>
-<span class="hljs-class">.search-form</span> {
-  &gt; <span class="hljs-class">.button</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.field</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.label</span> { <span class="pl-c">/* ... */</span> }
+<span class="hljs-selector-class">.search-form</span> {
+  &gt; <span class="hljs-selector-class">.button</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.field</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.label</span> { <span class="pl-c">/* ... */</span> }
 
   <span class="pl-c">// variants</span>
-  &amp;<span class="hljs-class">.-small</span> { <span class="pl-c">/* ... */</span> }
-  &amp;<span class="hljs-class">.-wide</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-selector-class">.-small</span> { <span class="pl-c">/* ... */</span> }
+  &amp;<span class="hljs-selector-class">.-wide</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 <h2 id="use-glob-matching">Use glob matching</h2>
 <p>In sass-rails and stylus, this makes including all of them easy:</p>
-<pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="pl-k">import</span> <span class="pl-s">&apos;components/*&apos;</span>;</span>
+<pre><code class="lang-scss">@<span class="pl-k">import</span> <span class="pl-s">&apos;components/*&apos;</span>;
 </code></pre>
 <h2 id="avoid-over-nesting">Avoid over-nesting</h2>
 <p>Use no more than 1 level of nesting. It&apos;s easy to get lost with too much nesting.</p>
 <pre><code class="lang-scss"><span class="pl-c">/* &#x2717; Avoid: 3 levels of nesting */</span>
-<span class="hljs-class">.image-frame</span> {
-  &gt; <span class="hljs-class">.description</span> {
+<span class="hljs-selector-class">.image-frame</span> {
+  &gt; <span class="hljs-selector-class">.description</span> {
     <span class="pl-c">/* ... */</span>
 
-    &gt; <span class="hljs-class">.icon</span> {
+    &gt; <span class="hljs-selector-class">.icon</span> {
       <span class="pl-c">/* ... */</span>
     }
   }
 }
 
 <span class="pl-c">/* &#x2713; Better: 2 levels */</span>
-<span class="hljs-class">.image-frame</span> {
-  &gt; <span class="hljs-class">.description</span> { <span class="pl-c">/* ... */</span> }
-  &gt; <span class="hljs-class">.description</span> &gt; <span class="hljs-class">.icon</span> { <span class="pl-c">/* ... */</span> }
+<span class="hljs-selector-class">.image-frame</span> {
+  &gt; <span class="hljs-selector-class">.description</span> { <span class="pl-c">/* ... */</span> }
+  &gt; <span class="hljs-selector-class">.description</span> &gt; <span class="hljs-selector-class">.icon</span> { <span class="pl-c">/* ... */</span> }
 }
 </code></pre>
 

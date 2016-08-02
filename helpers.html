@@ -25,15 +25,15 @@
         </div>
         <div class="markdown-body"><h1 id="helpers">Helpers</h1>
 <p>For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with <em>!important</em>. Use them <em>very</em> sparingly.</p>
-<pre><code class="lang-css"><span class="hljs-class">._unmargin</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">margin</span>:<span class="pl-s"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>; }</span>
-<span class="hljs-class">._center</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">text-align</span>:<span class="pl-s"> center <span class="hljs-important">!important</span></span></span>; }</span>
-<span class="hljs-class">._pull-left</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">float</span>:<span class="pl-s"> left <span class="hljs-important">!important</span></span></span>; }</span>
-<span class="hljs-class">._pull-right</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="pl-e">float</span>:<span class="pl-s"> right <span class="hljs-important">!important</span></span></span>; }</span>
+<pre><code class="lang-css"><span class="hljs-selector-class">._unmargin</span> { <span class="pl-e">margin</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>; }
+<span class="hljs-selector-class">._center</span> { <span class="pl-e">text-align</span>: center <span class="hljs-meta">!important</span>; }
+<span class="hljs-selector-class">._pull-left</span> { <span class="pl-e">float</span>: left <span class="hljs-meta">!important</span>; }
+<span class="hljs-selector-class">._pull-right</span> { <span class="pl-e">float</span>: right <span class="hljs-meta">!important</span>; }
 </code></pre>
 <h2 id="naming-helpers">Naming helpers</h2>
 <p>Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s">&apos;order-graphs -slim _unmargin&apos;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="pl-ent">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&apos;order-graphs -slim _unmargin&apos;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h2 id="organizing-helpers">Organizing helpers</h2>
 <p>Place all helpers in one file called <code>helpers</code>. While you can separate them into multiple files, it&apos;s very preferrable to keep your number of helpers to a minimum.</p>
