@@ -15,3 +15,5 @@
   - [Apprehensions](apprehensions.md)
   - [Other resources](other-resources.md)
 - [Summary](summary.md)
+- **External resources**
+  - [Translations](translations.md)
