@@ -41,14 +41,14 @@ This more of a feature than a defect in RSCSS: it forces you to create new compo
 ```
 
 ```css
-/* rscss: ✗ confusing impractical */
+/* RSCSS: ✗ confusing and impractical */
 .site-search {
   > .top > .info > .label > .icon { /*...*/ }
 }
 ```
 
 ```css
-/* rscss: ✓ better to create sub-components */
+/* RSCSS: ✓ better to create sub-components for deep hierarchies */
 .site-search-label {
   > .icon { /*...*/ }
 }
