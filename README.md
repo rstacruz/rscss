@@ -8,7 +8,7 @@
 
 <!-- {h1:.massive-header.-with-tagline} -->
 
-> Estilizando CSS sin perder la cordura
+> Trabajando con CSS sin perder la cordura
 
 Sistema Razonable para la Estructura de archivos CSS (RSCSS)<br>
 Un conjunto de ideas simples para guiar el proceso de construir CSS mantenible.
