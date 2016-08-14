@@ -25,7 +25,7 @@ Cualquier CSS superior a 1000 líneas se volverá difícil de manejar. Y eventua
 **rscss** Es un intento de resolver todas esos puntos. No es un framework. Es simplemente una serie de ideas para guiar el proceso de contrucción de CSS mantenible para cualquier aplicación o sitio web moderno.
 
 Comencemos con aprender sobre componentes.
-[Continue →](docs/components.md)
+[Continuar →](docs/components.md)
 <!-- {p:.pull-box} -->
 
 ----
