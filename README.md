@@ -1,4 +1,4 @@
-##### Viewing this from GitHub? Visit the website for the full experience. **[rscss.io →](http://rscss.io)**
+##### ¿Estás viendo esto desde Github? Visita el sitio web para una experiencia más completa. **[rscss.io →](http://rscss.io)**
 <!-- {h5: style='display:none'} -->
 
 ----
@@ -8,23 +8,23 @@
 
 <!-- {h1:.massive-header.-with-tagline} -->
 
-> Styling CSS without losing your sanity
+> Estilizando CSS sin perder la cordura
 
-Reasonable System for CSS Stylesheet Structure.<br>
-A set of simple ideas to guide your process of building maintainable CSS.
+Sistema Razonable para la Estructura de archivos CSS (RSCSS)<br>
+Un conjunto de ideas simples para guiar el proceso de construir CSS mantenible.
 
-Introduction
+Introducción
 ------------
 
-Any CSS greater than 1000 lines will get unwieldy. You'll eventually run into these common pitfalls:
+Cualquier CSS superior a 1000 líneas se volverá difícil de manejar. Y eventualmente vas a caen en estas trampas comunes:
 
-* "What does this class mean?"
-* "Is this class still being used?"
-* "If I make a new class `green`, will there be a clash?"
+* "¿Qué significa esto?"
+* "¿Está esta clase usandose?"
+* "Si hago una nueva clase `verde`, ¿habrá un conflicto?"
 
-**rscss** is an attempt to make sense of all these. It is not a framework. It's simply a set of ideas to guide your process of building maintainable CSS for any modern website or application.
+**rscss** Es un intento de resolver todas esos puntos. No es un framework. Es simplemente una serie de ideas para guiar el proceso de contrucción de CSS mantenible para cualquier aplicación o sitio web moderno.
 
-Let's get started by learning about components.
+Comencemos con aprender sobre componentes.
 [Continue →](docs/components.md)
 <!-- {p:.pull-box} -->
 
@@ -33,6 +33,7 @@ Let's get started by learning about components.
 
 **rscss** © 2015+, Rico Sta. Cruz. Released under the [MIT] License.<br>
 Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
+Spanish translation by James Kolce
 <!-- {p: style='display:none'} -->
 
 > [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
