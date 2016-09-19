@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="assets/style.css?t=a44c9e9d">
     <link rel="stylesheet" href="http://ricostacruz.com/docpress-rsc/style.css">
     <script src="assets/script.js?t=2bcc4b59"></script>
-    <title>Layouts</title>
+    <title>Translations</title>
     <meta name="viewport" content="width=device-width">
     <script>
       if (false || window.location.hostname.indexOf("rscss.io") === window.location.hostname.length - 8) {
@@ -17,51 +17,23 @@
   <body class="-menu-visible">
     <div class="doc-layout">
       <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="body page-layouts">
+      <div class="body page-translations">
         <div class="header-nav">
           <div class="right"><a href="https://github.com/rstacruz/rscss" data-title="rstacruz/rscss" class="iconlink">
               <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
           </div>
         </div>
-        <div class="markdown-body"><h1 id="layouts">Layouts</h1>
-<p><img src="images/layouts.png" alt=""></p>
-<h2 id="avoid-positioning-properties">Avoid positioning properties</h2>
-<p>Components should be made in a way that they&apos;re reusable in different contexts. Avoid putting these properties in components:</p>
+        <div class="markdown-body"><h1 id="translations">Translations</h1>
+<p>Some unofficial translations are available courtesy of the community.</p>
 <ul>
-<li>Positioning (<code>position</code>, <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>)</li>
-<li>Floats (<code>float</code>, <code>clear</code>)</li>
-<li>Margins (<code>margin</code>)</li>
-<li>Dimensions (<code>width</code>, <code>height</code>) *</li>
+<li><a href="https://eddiewen.gitbooks.io/rscss/content/">Chinese</a></li>
+<li><a href="http://rscss.in.th/">Thai</a></li>
+<li><a href="http://qiita.com/kk6/items/760efba180ec526903db">Japanese</a></li>
 </ul>
-<h2 id="fixed-dimensions">Fixed dimensions</h2>
-<p>Exception to these would be elements that have fixed width/heights, such as avatars and logos.</p>
-<h2 id="define-positioning-in-parents">Define positioning in parents</h2>
-<p>If you need to define these, try to define them in whatever context they will be in. In this example below, notice that the widths and floats are applied on the <em>list</em> component, not the component itself.</p>
-<pre><code class="lang-css">.article-list {
-  &amp; {
-    @include clearfix;
-  }
-
-  &gt; .article-card {
-    width: 33.3%;
-    float: left;
-  }
-}
-
-.article-card {
-  &amp; { /* ... */ }
-  &gt; .image { /* ... */ }
-  &gt; .title { /* ... */ }
-  &gt; .category { /* ... */ }
-}
-</code></pre>
-<p class="pull-box">How do you apply margins outside a layout? Try it with Helpers.
-<a href="helpers.html">Continue &#x2192;</a></p>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="nested-components.html"><span class="title">Nested components</span></a></div>
-          <div class="right"><a href="helpers.html"><span class="label">Next: </span><span class="title">Helpers</span></a></div>
+          <div class="left"><a href="summary.html"><span class="title">Summary</span></a></div>
         </div>
       </div>
       <div class="menu toc-menu">
@@ -79,15 +51,7 @@
                 </li>
                 <li class="menu-item -level-2"><a href="nested-components.html" class="link title  link-nested-components">Nested components</a>
                 </li>
-                <li class="menu-item -level-2"><a href="layouts.html" class="link title -active link-layouts">Layouts</a>
-                  <ul class="headings heading-list">
-                    <li class="heading-item -depth-2"><a href="#avoid-positioning-properties" class="hlink link-avoid-positioning-properties">Avoid positioning properties</a>
-                    </li>
-                    <li class="heading-item -depth-2"><a href="#fixed-dimensions" class="hlink link-fixed-dimensions">Fixed dimensions</a>
-                    </li>
-                    <li class="heading-item -depth-2"><a href="#define-positioning-in-parents" class="hlink link-define-positioning-in-parents">Define positioning in parents</a>
-                    </li>
-                  </ul>
+                <li class="menu-item -level-2"><a href="layouts.html" class="link title  link-layouts">Layouts</a>
                 </li>
                 <li class="menu-item -level-2"><a href="helpers.html" class="link title  link-helpers">Helpers</a>
                 </li>
@@ -113,7 +77,7 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">External resources</span>
               <ul class="submenu">
-                <li class="menu-item -level-2"><a href="translations.html" class="link title  link-translations">Translations</a>
+                <li class="menu-item -level-2"><a href="translations.html" class="link title -active link-translations">Translations</a>
                 </li>
               </ul>
             </li>

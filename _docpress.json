@@ -224,6 +224,17 @@
         "source": "docs/summary.md",
         "url": "summary.html",
         "slug": "summary"
+      },
+      {
+        "title": "External resources",
+        "sections": [
+          {
+            "title": "Translations",
+            "source": "docs/translations.md",
+            "url": "translations.html",
+            "slug": "translations"
+          }
+        ]
       }
     ]
   },
@@ -424,6 +435,11 @@
       "source": "docs/summary.md",
       "title": "Summary",
       "slug": "summary"
+    },
+    "translations.html": {
+      "source": "docs/translations.md",
+      "title": "Translations",
+      "slug": "translations"
     }
   },
   "sources": {
@@ -439,6 +455,7 @@
     "docs/apprehensions.md": "apprehensions.html",
     "docs/other-resources.md": "other-resources.html",
     "docs/summary.md": "summary.html",
+    "docs/translations.md": "translations.html",
     "docs/docpress.json": "docpress.json",
     "docs/images/component-elements.png": "images/component-elements.png",
     "docs/images/component-example.png": "images/component-example.png",
