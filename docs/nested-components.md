@@ -14,15 +14,17 @@
 
 Sometimes it's necessary to nest components. Here are some guidelines for doing that.
 
-## Variants
-A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+## Avoid styling nested components
+A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component. This can cause problems with specificity.
 
 ```scss
 .article-header {
-  > .vote-box > .up { /* ✗ avoid this */ }
+  > .vote-box { } // ✗ avoid this
+  > .vote-box > .up { } // ✗ avoid this
 }
 ```
 
+## Variants in elements
 Instead, prefer to add a variant to the nested component and apply it from the containing component.
 
 ```html
