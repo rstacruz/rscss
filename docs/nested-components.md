@@ -54,35 +54,6 @@ This avoids creating styles as nested components (`.profile-card > .profile-info
 </div>
 ```
 
-## Simplifying nested components
-Sometimes, when nesting components, your markup can get dirty:
-
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='search-button -red -large'></button>
-</div>
-```
-
-You can simplify this by using your CSS preprocessor's `@extend` mechanism:
-
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='submit'></button>
-</div>
-```
-
-```scss
-.search-form {
-  > .submit {
-    @extend .search-button;
-    @extend .search-button.-red;
-    @extend .search-button.-large;
-  }
-}
-```
-
 What about repeating elements like lists? Learn about Layouts.
 [Continue →](layouts.md)
 <!-- {p:.pull-box} -->
