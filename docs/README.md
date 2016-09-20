@@ -9,7 +9,8 @@
   - [Layouts](layouts.md)
   - [Helpers](helpers.md)
 - **Structure**
-  - [CSS Structure](css-structure.md)
+  - [CSS structure](css-structure.md)
+  - [CSS preprocessors](css-preprocessors.md)
 - **Notes**
   - [Pitfalls](pitfalls.md)
   - [Apprehensions](apprehensions.md)
