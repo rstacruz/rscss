@@ -13,7 +13,9 @@
 - **Notes**
   - [Pitfalls](pitfalls.md)
   - [Apprehensions](apprehensions.md)
+  - [Simplifying nested components](simplifying-nested-components.md)
   - [Other resources](other-resources.md)
 - [Summary](summary.md)
+- [History](../HISTORY.md)
 - **External resources**
   - [Translations](translations.md)

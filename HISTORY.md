@@ -1,6 +1,10 @@
-## v2.0
-> Unreleased
+## [v2.0.0]
+> _Unreleased_
 
+This is the first release of the second edition of RSCSS. There are some changes to recommendations:
+
+* Components are allowed to have margins. This lets you use components together in a page without worrying about their margins.
+* `@extend` is no longer recommended. This has caused a lot of debate (#9), and this hasn't really been used much in practice.
 
 ## [v1.3.0]
 > Jun  3, 2015
@@ -29,3 +33,4 @@ Initial version of the first edition.
 [v1.1.0]: https://github.com/rstacruz/rscss/compare/v1.0.0...v1.1.0
 [v1.2.0]: https://github.com/rstacruz/rscss/compare/v1.1.0...v1.2.0
 [v1.3.0]: https://github.com/rstacruz/rscss/compare/v.1.2.0...v1.3.0
+[v2.0.0]: https://github.com/rstacruz/rscss/compare/v.1.3.0...v2.0.0
