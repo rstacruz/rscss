@@ -29,7 +29,7 @@ Instead, prefer to add a variant to the nested component.
 
 ```html
 <div class='article-header'>
-  <div class='vote-box -highlight'>
+  <div class='vote-box -small'>
     ...
   </div>
   ...
@@ -38,7 +38,7 @@ Instead, prefer to add a variant to the nested component.
 
 ```scss
 .vote-box {
-  &.-highlight > .up { /* ... */ }
+  &.-small > .up { /* ... */ }
 }
 ```
 
