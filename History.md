@@ -1,21 +1,29 @@
-## [v1.3.0] - Jun  3, 2015
+## v2.0
+> Unreleased
+
+
+## [v1.3.0]
+> Jun  3, 2015
 
 Reorganized the document into clearer sections. No content changes.
 
 * Introduction: updated this section to reflect the purpose of rscss better.
 
-## [v1.2.0] - Jun  3, 2015
+## [v1.2.0]
+> Jun  3, 2015
 
 * Add helpers.
 * Remove 'work in progress' icon — rscss should be considered pretty stable now.
 
-## [v1.1.0] - Feb 10, 2015
+## [v1.1.0]
+> Feb 10, 2015
 
 Child selectors are now the preferred convention for styling elements. ([#2])
 
-## v1.0.0 - Jan 30, 2015
+## v1.0.0
+> Jan 30, 2015
 
-Initial version.
+Initial version of the first edition.
 
 [#2]: https://github.com/rstacruz/rscss/issues/2
 [v1.1.0]: https://github.com/rstacruz/rscss/compare/v1.0.0...v1.1.0
