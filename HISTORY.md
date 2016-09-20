@@ -5,6 +5,7 @@ This is the first release of the second edition of RSCSS. There are some changes
 
 * Components are allowed to have margins. This lets you use components together in a page without worrying about their margins.
 * `@extend` is no longer recommended. This has caused a lot of debate (#9), and this hasn't really been used much in practice.
+* Variants can now have more than one word (eg, `.-no-icon`).
 
 ## [v1.3.0]
 > Jun  3, 2015
