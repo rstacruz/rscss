@@ -24,8 +24,8 @@ A component may need to appear a certain way when nested in another component. A
 }
 ```
 
-## Variants in elements
-Instead, prefer to add a variant to the nested component and apply it from the containing component.
+## Variants in nested components
+Instead, prefer to add a variant to the nested component.
 
 ```html
 <div class='article-header'>
