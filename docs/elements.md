@@ -1,11 +1,11 @@
-# Elements
+# Elementos
 
-Elements are things inside your component.
+Los elementos son cosas dentro de tus componentes.
 
 ![](images/component-elements.png)
 
-## Naming elements
-Each component may have elements. They should have classes that are only **one word**.
+## Nombre de los elementos
+Cada competente puede tener elements. Estos son clases que tiene solamente **una palabra** en su nombre.
 
 ```scss
 .search-form {
@@ -14,8 +14,8 @@ Each component may have elements. They should have classes that are only **one w
 }
 ```
 
-## Element selectors
-Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+## Selectores de elementos 
+Preferentemente anteponer el selector  `>` cuando es posible. Esto previene conflictos con componentes anidados, y tiene un mejor desempeño que selectores descendientes. 
 
 ```scss
 .article-card {
@@ -24,8 +24,8 @@ Prefer to use the `>` child selector whenever possible. This prevents bleeding t
 }
 ```
 
-## On multiple words
-For those that need two or more words, concatenate them without dashes or underscores.
+## Multiples palabras 
+Para aquellas clases que tienen 2 o más palabras, concatenar las palabras usando guiones.
 
 ```scss
 .profile-box {
@@ -35,8 +35,8 @@ For those that need two or more words, concatenate them without dashes or unders
 }
 ```
 
-## Avoid tag selectors
-Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+## Evitar selectores de etiquetas
+Usar selectores de clases cuando es posible. Los selectores de etiquetas estan bien, pero pueden reducir un poco el desempeño y no son tan descriptivos.
 
 ```scss
 .article-card {
@@ -45,6 +45,6 @@ Use classnames whenever possible. Tag selectors are fine, but they may come at a
 }
 ```
 
-Not all elements should always look the same. Variants can help.
-[Continue →](variants.md)
+No todos los elementos se ven iguales. Las variantes nos ayudarán para esto.
+[Continuar →](variants.md)
 <!-- {p:.pull-box} -->

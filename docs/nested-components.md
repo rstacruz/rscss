@@ -1,5 +1,4 @@
-# Nested components
-
+# Componentes anidados
 ![](images/component-nesting.png)
 
 ```html
@@ -12,18 +11,18 @@
 </div>
 ```
 
-Sometimes it's necessary to nest components. Here are some guidelines for doing that.
+Aveces es necesario anidar componentes. He aquí algunas guías para hacer esto.
 
-## Variants
-A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+## Variantes
+Un componente puede aparecer anidado dentro de otro componente. Se debe evitar modificar el componente que lo contiene para poder llegar al componente anidado.
 
 ```scss
 .article-header {
-  > .vote-box > .up { /* ✗ avoid this */ }
+  > .vote-box > .up { /* ✗ Evitar esto */ }
 }
 ```
 
-  Instead, prefer to add a variant to the nested component and apply it from the containing component.
+Es preferible agregar una variante al componente anidado y aplicarlo desde el componente que lo contiene.
 
 ```html
 <div class='article-header'>
@@ -40,8 +39,8 @@ A component may need to appear a certain way when nested in another component. A
 }
 ```
 
-## Simplifying nested components
-Sometimes, when nesting components, your markup can get dirty:
+## Simplificando componentes anidados
+Aveces cuando anidamos componentes el código puede quedar un poco sucio:
 
 ```html
 <div class='search-form'>
@@ -50,7 +49,7 @@ Sometimes, when nesting components, your markup can get dirty:
 </div>
 ```
 
-You can simplify this by using your CSS preprocessor's `@extend` mechanism:
+Esto se puede simplificar al usuario las funciones `@extend` que tienen algunos pre procesadores de CSS:
 
 ```html
 <div class='search-form'>
@@ -69,6 +68,7 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 }
 ```
 
+¿Y que hay de los elementos que se repiten como las listas? Veamos sobre las interfaces 
 What about repeating elements like lists? Learn about Layouts.
-[Continue →](layouts.md)
+[Continuar →](layouts.md)
 <!-- {p:.pull-box} -->

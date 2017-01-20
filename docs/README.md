@@ -1,17 +1,17 @@
-# Table of contents
+# Tabla de contenidos
 
 - [rscss](../README.md)
 - **Components**
-  - [About components](components.md)
-  - [Elements](elements.md)
-  - [Variants](variants.md)
-  - [Nested components](nested-components.md)
-  - [Layouts](layouts.md)
-  - [Helpers](helpers.md)
+  - [Componentes](components.md)
+  - [Elementos](elements.md)
+  - [Variantes](variants.md)
+  - [Componentes anidados](nested-components.md)
+  - [interfaces](layouts.md)
+  - [Ayudantes](helpers.md)
 - **Structure**
-  - [CSS Structure](css-structure.md)
+  - [CSS estructura](css-structure.md)
 - **Notes**
-  - [Pitfalls](pitfalls.md)
+  - [Obstáculos](pitfalls.md)
   - [Apprehensions](apprehensions.md)
-  - [Other resources](other-resources.md)
-- [Summary](summary.md)
+  - [Otros recursos](other-resources.md)
+- [Resumen](summary.md)

@@ -1,7 +1,8 @@
-# Pitfalls
+Obstáculos
 
-## Bleeding through nested components
-Be careful about nested components with elements sharing the same name as elements in its container.
+## Problemas  de componentes anidados
+Tenga cuidado con los componentes  con elementos que tengan el mismo nombre que los elementos de su contenedor.
+
 
 ```html
 <article class='article-link'>
@@ -29,4 +30,4 @@ Be careful about nested components with elements sharing the same name as elemen
 }
 ```
 
-In this case, if `.article-link > .count` did not have the `>` (child) selector, it will also apply to the `.vote-box .count` element. This is one of the reasons why child selectors are preferred.
+En este caso, si `.article-link> .count` no tiene el selector `> `(child), también se aplicará al elemento` .vote-box .count`. Esta es una de las razones por las que se prefieren los selectores directos.

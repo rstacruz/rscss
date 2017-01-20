@@ -1,7 +1,7 @@
-# Summary
+# Resumen
 
-* Think in **components**, named with 2 words (`.screenshot-image`)
-* Components have **elements**, named with 1 word (`.blog-post > .title`)
-* Name **variants** with a dash prefix (`.shop-banner.-with-icon`)
-* Components can nest
-* Remember you can extend to make things simple
+* Piense en ** componentes **, nombrados siempre con 2 palabras (`.screenshot-image`)
+* Los componentes tienen ** elementos **, que son nombrados con 1 palabra (`.blog-post> .title`)
+* Nombre a las ** variantes ** con un prefijo de guión (`.shop-banner.-with-icon`)
+* Los componentes se pueden anidar
+* Recuerde que puede extender para simplificar las cosas

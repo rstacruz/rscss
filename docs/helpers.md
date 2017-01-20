@@ -1,6 +1,6 @@
-# Helpers
+# Ayudantes
 
-For general-purpose classes meant to override values, put them in a separate file and name them beginning with an underscore. They are typically things that are tagged with *!important*. Use them *very* sparingly.
+Uselos para clases de propósito general destinadas a sobre escribir valores  se recomienda ponerlos en un archivo separado y nombrarlos empezando por un guión bajo. Son típicamente cosas que se etiquetan con *!important*. Utilícelos con *mucha* moderación.
 
 ```css
 ._unmargin { margin: 0 !important; }
@@ -9,13 +9,13 @@ For general-purpose classes meant to override values, put them in a separate fil
 ._pull-right { float: right !important; }
 ```
 
-## Naming helpers
-Prefix classnames with an underscore. This will make it easy to differentiate them from modifiers defined in the component. Underscores also look a bit ugly which is an intentional side effect: using too many helpers should be discouraged.
+## Nombrando los ayudantes
+Se nombran iniciando con un guión bajo.  Esto hará que sea fácil diferenciarlos de los modificadores definidos en el componente. Los guiones bajos también se ven un poco feo que es un efecto secundario intencional: el uso de demasiados ayudantes debe desalentarse.
 
   ```html
   <div class='order-graphs -slim _unmargin'>
   </div>
   ```
 
-## Organizing helpers
-Place all helpers in one file called `helpers`. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
+## Organizando los ayudantes
+Coloque todos los ayudantes en un archivo llamado `helpers`. Puede separarlos en archivos múltiples, pero es preferible mantener el numero de ayudantes al mínimo.
