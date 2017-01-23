@@ -33,7 +33,7 @@ Comencemos con aprender sobre componentes.
 
 **rscss** © 2015+, Rico Sta. Cruz. Released under the [MIT] License.<br>
 Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
-Spanish translation by James Kolce
+Spanish translation by Victor Castrejon
 <!-- {p: style='display:none'} -->
 
 > [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
