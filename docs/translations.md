@@ -6,3 +6,4 @@ Some unofficial translations are available courtesy of the community.
 - [Thai](http://rscss.in.th/)
 - [Japanese](http://qiita.com/kk6/items/760efba180ec526903db)
 - [Spanish](https://github.com/jameskolce/rscss-es)
+- [French](https://github.com/VincentKosciuszko/rscss)
