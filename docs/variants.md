@@ -35,6 +35,6 @@ Dashes are the preferred prefix for variants.
   * Dashes are easier to type than underscores.
   * It kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`).
 
-How do you deal with complex elements? Nest them.
+How do you deal with complex components? Nest them.
 [Continue →](nested-components.md)
 <!-- {p:.pull-box} -->
