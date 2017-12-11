@@ -29,7 +29,7 @@ Other solutions
 
 The same concepts exist in similar ways in other CSS structuring ideologies.
 
-| RSCSS     | BEM      | SMACSS        |
+| RSCSS     | [BEM]    | [SMACSS]      |
 | ---       | ---      | ---           |
 | Component | Block    | Module        |
 | Element   | Element  | Sub-Component |
@@ -37,4 +37,4 @@ The same concepts exist in similar ways in other CSS structuring ideologies.
 | Variant   | Modifier | Sub-Module & State |
 
 [BEM]: http://bem.info/
-[Smacss]: https://smacss.com/
+[SMACSS]: https://smacss.com/
