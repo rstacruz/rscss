@@ -9,11 +9,14 @@
   - [Layouts](layouts.md)
   - [Helpers](helpers.md)
 - **Structure**
-  - [CSS Structure](css-structure.md)
+  - [CSS structure](css-structure.md)
+  - [CSS preprocessors](css-preprocessors.md)
 - **Notes**
   - [Pitfalls](pitfalls.md)
   - [Apprehensions](apprehensions.md)
+  - [Simplifying nested components](simplifying-nested-components.md)
   - [Other resources](other-resources.md)
 - [Summary](summary.md)
+- [History](../HISTORY.md)
 - **External resources**
   - [Translations](translations.md)
