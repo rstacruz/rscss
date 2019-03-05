@@ -1,7 +1,7 @@
-# CSS structure
+# Estrutura CSS 
 
-## One component per file
-For each component, place them in their own file.
+## Um componente por arquivo
+Para cada componente, coloque eles em seus respectivos arquivos.
 
   ```scss
   /* css/components/search-form.scss */
@@ -10,24 +10,24 @@ For each component, place them in their own file.
     > .field { /* ... */ }
     > .label { /* ... */ }
 
-    // variants
+    // variantes
     &.-small { /* ... */ }
     &.-wide { /* ... */ }
   }
   ```
 
-## Use glob matching
-In sass-rails and stylus, this makes including all of them easy:
+## Use globo correspondente
+O sass-rails e stylus facilitam a inclusão dos componentes:
 
   ```scss
   @import 'components/*';
   ```
 
-## Avoid over-nesting
-Use no more than 1 level of nesting. It's easy to get lost with too much nesting.
+## Evite multiplos aninhamento
+Não use mais do que 1 nível de aninhamento. É fácil se perder quando se tem muitos aninhamentos.
 
   ```scss
-  /* ✗ Avoid: 3 levels of nesting */
+  /* ✗ Evite: 3 níveis de aninhamento */
   .image-frame {
     > .description {
       /* ... */
@@ -38,7 +38,7 @@ Use no more than 1 level of nesting. It's easy to get lost with too much nesting
     }
   }
 
-  /* ✓ Better: 2 levels */
+  /* ✓ Melhor: 2 níveis */
   .image-frame {
     > .description { /* ... */ }
     > .description > .icon { /* ... */ }

@@ -1,4 +1,4 @@
-# Nested components
+# Componentes aninhados
 
 ![](images/component-nesting.png)
 
@@ -12,18 +12,18 @@
 </div>
 ```
 
-Sometimes it's necessary to nest components. Here are some guidelines for doing that.
+Às vezes é necessário aninhar componentes. Aqui estão algumas diretrizes para fazer isso.
 
-## Variants
-A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+## Variantes
+Um componente pode precisar aparecer de uma determinada maneira quando aninhado em outro componente. Evite modificar o componente aninhado tentando alcança-lo a partir do componente que o contém.
 
 ```scss
 .article-header {
-  > .vote-box > .up { /* ✗ avoid this */ }
+  > .vote-box > .up { /* ✗ evite isso */ }
 }
 ```
 
-  Instead, prefer to add a variant to the nested component and apply it from the containing component.
+Em vez disso, prefira adicionar uma variante ao componente aninhado e aplique-o a partir do componente contido.
 
 ```html
 <div class='article-header'>
@@ -40,8 +40,9 @@ A component may need to appear a certain way when nested in another component. A
 }
 ```
 
-## Simplifying nested components
-Sometimes, when nesting components, your markup can get dirty:
+## Simplificando componentes aninhados
+
+Às vezes, ao aninhar componentes, seu markup pode ficar sujo:
 
 ```html
 <div class='search-form'>
@@ -50,7 +51,7 @@ Sometimes, when nesting components, your markup can get dirty:
 </div>
 ```
 
-You can simplify this by using your CSS preprocessor's `@extend` mechanism:
+Você pode simplificar isso usando o mecanismo de `@extend` do seu pré-processador CSS:
 
 ```html
 <div class='search-form'>
@@ -69,6 +70,6 @@ You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 }
 ```
 
-What about repeating elements like lists? Learn about Layouts.
+Que tal repetir elementos como listas? Aprenda sobre layouts.
 [Continue →](layouts.md)
 <!-- {p:.pull-box} -->
