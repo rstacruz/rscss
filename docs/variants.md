@@ -1,13 +1,13 @@
-# Variants
+# Variantes
 
-Components may have variants. Elements may have variants, too.
+Componentes podem ter variantes. Os elementos podem ter variantes também.
 
 ![](images/component-modifiers.png)
 
 <br>
 
-## Naming variants
-Classnames for variants will be prefixed by a dash (`-`).
+## Nomeando variantes
+Nomes de classes para variantes serão prefixados por um dash (`-`).
 
   ```scss
   .like-button {
@@ -17,8 +17,8 @@ Classnames for variants will be prefixed by a dash (`-`).
   }
   ```
 
-## Element variants
-Elements may also have variants.
+## Variantes de elemento
+Elementos também podem ter variantes.
 
   ```scss
   .shopping-card {
@@ -27,14 +27,14 @@ Elements may also have variants.
   }
   ```
 
-## Dash prefixes
-Dashes are the preferred prefix for variants.
+## Prefixos com Dash
+Dashes são os ideais para prefixar variantes.
 
-  * It prevents ambiguity with elements.
-  * A CSS class can only start with a letter, `_` or `-`.
-  * Dashes are easier to type than underscores.
-  * It kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`).
+  * Isso evita a ambigüidade com elementos.
+  * Uma classe CSS apenas pode iniciar com a letra `_` ou `-`.
+  * Dashes são mais fáceis de digitar comparado ao underscore.
+  * É parecido com switches nos comandos do UNIX (`gcc -O2 -Wall -emit-last`).
 
-How do you deal with complex elements? Nest them.
+Como você lida com elementos complexos? Aninhe-os.
 [Continue →](nested-components.md)
 <!-- {p:.pull-box} -->

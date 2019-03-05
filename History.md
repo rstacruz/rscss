@@ -2,7 +2,7 @@
 
 Reorganized the document into clearer sections. No content changes.
 
-* Introduction: updated this section to reflect the purpose of rscss better.
+* Introduction: updated this section to reflect the purpose of rscss melhor.
 
 ## [v1.2.0] - Jun  3, 2015
 
