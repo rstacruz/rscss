@@ -23,7 +23,7 @@ Qualquer CSS com mais de 1000 linhas ficará desconfortável. Você acabará se 
 * "Para o que essa classe está sendo usada?"
 * "Se eu faço uma nova classe chamada `green`, haverá conflitos?"
 
-**rscss** é uma tentativa de dar sentido a tudo isso. Não é um quadro. É simplesmente um conjunto de ideias para guiar seu processo de criação de um CSS de fácil manutenção para qualquer site ou aplicativo moderno.
+**rscss** é uma tentativa de dar sentido a tudo isso. Não é um framework. É simplesmente um conjunto de ideias para guiar seu processo de criação de um CSS de fácil manutenção para qualquer site ou aplicativo moderno.
 
 Vamos começar aprendendo sobre componentes.
 [Continue →](docs/components.md)
