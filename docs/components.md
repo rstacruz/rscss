@@ -1,18 +1,18 @@
-Components
+Componentes
 ==========
 
-Think in components. Consider each piece of your UI as an individual "component".
+Pense em componentes. Considere cada pedaço de sua UI como um "componente" individual.
 
 ![](images/component-example.png)
 
-## Naming components
-Components will be named with **at least two words**, with a dash between each word. Examples of components:
+## Nomeando Componentes
+Componentes serão nomeados com **ao menos duas palavras**, com um dash entre cada palavra. Exemplos de componentes:
 
-  * A like button (`.like-button`)
-  * A search form (`.search-form`)
-  * A news article card (`.article-card`)
-  * A namespaced component (`.rico-custom-header`)
+  * Um botão de like (`.like-button`)
+  * Um formulário de pesquisa (`.search-form`)
+  * Um cartão de notícia (`.article-card`)
+  * Um componente com namespace (`.rico-custom-header`)
 
-How do you write a component exactly? Let's learn about Elements.
+Como você exatamente escreve um componente? Vamos aprender sobre Elementos.
 [Continue →](elements.md)
 <!-- {p:.pull-box} -->
