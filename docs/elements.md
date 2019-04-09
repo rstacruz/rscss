@@ -1,11 +1,11 @@
-# Elements
+# Elementos
 
-Elements are things inside your component.
+Elementos são coisas dentro do seu componente.
 
 ![](images/component-elements.png)
 
-## Naming elements
-Each component may have elements. They should have classes that are only **one word**.
+## Nomeando Elementos
+Cada componente pode ter elementos. Eles deve ter classes com apenas **uma palavra**.
 
 ```scss
 .search-form {
@@ -14,18 +14,18 @@ Each component may have elements. They should have classes that are only **one w
 }
 ```
 
-## Element selectors
-Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+## Seletor nos Elementos
+Dê preferência ao uso do seletor filho `>` sempre que possivel. Isso previne complicações nos componentes aninhados, e se comporta melhor nos seletores descendentes.
 
 ```scss
 .article-card {
   .title     { /* okay */ }
-  > .author  { /* ✓ better */ }
+  > .author  { /* ✓ melhor */ }
 }
 ```
 
-## On multiple words
-For those that need two or more words, concatenate them without dashes or underscores.
+## Em multiplas palavras
+Para essas que necessitam de duas ou mais palavras, concatene eles sem dashes ou underscores.
 
 ```scss
 .profile-box {
@@ -35,16 +35,16 @@ For those that need two or more words, concatenate them without dashes or unders
 }
 ```
 
-## Avoid tag selectors
-Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+## Evite seletores de tag
+Use nome de classes sempre que possível, seletores de Tag são bons, mas eles são pouco perfomáticos e podem não ser muito descritivos.
 
 ```scss
 .article-card {
-  > h3    { /* ✗ avoid */ }
-  > .name { /* ✓ better */ }
+  > h3    { /* ✗ evite */ }
+  > .name { /* ✓ melhor */ }
 }
 ```
 
-Not all elements should always look the same. Variants can help.
+Nem todos elementos devem sempre parecer iguais. Variantes podem ajudar.
 [Continue →](variants.md)
 <!-- {p:.pull-box} -->
