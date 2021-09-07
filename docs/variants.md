@@ -28,11 +28,11 @@ Elements may also have variants.
   ```
 
 ## Dash prefixes
-Dashes are the preferred prefix for variants.
+A dash is the preferred prefix for a variant because:
 
   * It prevents ambiguity with elements.
-  * A CSS class can only start with a letter, `_` or `-`.
-  * Dashes are easier to type than underscores.
+  * A CSS class name can only start with a letter, `_` or `-`.
+  * A dash is easier to type than an underscore.
   * It kind of resembles switches in UNIX commands (`gcc -O2 -Wall -emit-last`).
 
 How do you deal with complex elements? Nest them.
