@@ -1,12 +1,11 @@
-name: Run tests
+name: Deploy
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -16,4 +15,9 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        branch: gh-pages
+        folder: _docpress
 
