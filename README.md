@@ -1,4 +1,4 @@
-##### Viewing this from GitHub? Visit the website for the full experience. **[rscss.io →](http://rscss.io)**
+##### Viewing this from GitHub? Visit the website for the full experience. **[ricostacruz.com/rscss →](https://ricostacruz.com/rscss)**
 <!-- {h5: style='display:none'} -->
 
 ----
