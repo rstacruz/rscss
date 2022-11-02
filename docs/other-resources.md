@@ -25,6 +25,35 @@ Other solutions
 </form>
 ```
 
+### Deep components
+
+With BEM, you're allowed to have deep components where the DOM subtree can go down many levels deep. While this is true in RSCSS as well, the dependence on the child selector (`>`) makes this impractical.
+
+This more of a feature than a defect in RSCSS: it forces you to create new components for deep hierarchies, making this more manageable. RSCSS's use of `>` also makes it easy to visualize a DOM structure based on CSS styles, leading to self-documenting code.
+
+<!-- TODO: illustration -->
+
+```css
+/* BEM: ✓ allowed */
+.site-search {
+  &--icon { /*...*/ }
+}
+```
+
+```css
+/* RSCSS: ✗ confusing and impractical */
+.site-search {
+  > .top > .info > .label > .icon { /*...*/ }
+}
+```
+
+```css
+/* RSCSS: ✓ better to create sub-components for deep hierarchies */
+.site-search-label {
+  > .icon { /*...*/ }
+}
+```
+
 ## Terminologies
 
 The same concepts exist in similar ways in other CSS structuring ideologies.

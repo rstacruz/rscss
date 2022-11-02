@@ -4,7 +4,7 @@
 
 ```html
 <div class='article-link'>
-  <div class='vote-box'>
+  <div class='vote vote-box'>
     ...
   </div>
   <h3 class='title'>...</h3>
@@ -14,20 +14,22 @@
 
 Sometimes it's necessary to nest components. Here are some guidelines for doing that.
 
-## Variants
-A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component.
+## Avoid styling nested components
+A component may need to appear a certain way when nested in another component. Avoid modifying the nested component by reaching into it from the containing component. This can cause problems with specificity.
 
 ```scss
 .article-header {
-  > .vote-box > .up { /* ✗ avoid this */ }
+  > .vote-box { } // ✗ avoid this
+  > .vote-box > .up { } // ✗ avoid this
 }
 ```
 
-  Instead, prefer to add a variant to the nested component and apply it from the containing component.
+## Variants in nested components
+Instead, prefer to add a variant to the nested component.
 
 ```html
 <div class='article-header'>
-  <div class='vote-box -highlight'>
+  <div class='vote-box -small'>
     ...
   </div>
   ...
@@ -36,36 +38,7 @@ A component may need to appear a certain way when nested in another component. A
 
 ```scss
 .vote-box {
-  &.-highlight > .up { /* ... */ }
-}
-```
-
-## Simplifying nested components
-Sometimes, when nesting components, your markup can get dirty:
-
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='search-button -red -large'></button>
-</div>
-```
-
-You can simplify this by using your CSS preprocessor's `@extend` mechanism:
-
-```html
-<div class='search-form'>
-  <input class='input' type='text'>
-  <button class='submit'></button>
-</div>
-```
-
-```scss
-.search-form {
-  > .submit {
-    @extend .search-button;
-    @extend .search-button.-red;
-    @extend .search-button.-large;
-  }
+  &.-small > .up { /* ... */ }
 }
 ```
 

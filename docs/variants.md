@@ -7,25 +7,32 @@ Components may have variants. Elements may have variants, too.
 <br>
 
 ## Naming variants
-Classnames for variants will be prefixed by a dash (`-`).
+Classnames for variants will be prefixed by a dash (`-`). A variant may have more than one word, as long as they are joined by dashes.
 
-  ```scss
-  .like-button {
-    &.-wide { /* ... */ }
-    &.-short { /* ... */ }
-    &.-disabled { /* ... */ }
-  }
-  ```
+```scss
+.like-button {
+  &.-wide { /*...*/ }
+  &.-short { /*...*/ }
+  &.-disabled { /*...*/ }
+  &.-no-line { /*...*/ }
+}
+```
 
 ## Element variants
-Elements may also have variants.
+Both components and elements may have variants.
 
-  ```scss
-  .shopping-card {
-    > .title { /* ... */ }
-    > .title.-small { /* ... */ }
-  }
-  ```
+```scss
+// Element variants
+.shopping-cart {
+  > .title { /*...*/ }
+  > .title.-small { /*...*/ }
+}
+
+// Component variants
+.shopping-cart.-inline {
+  /* ... */
+}
+```
 
 ## Dash prefixes
 A dash is the preferred prefix for a variant because:
